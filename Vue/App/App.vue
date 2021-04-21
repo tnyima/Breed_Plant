@@ -1,20 +1,56 @@
 <template>
   <div class = "container">
     <Header title = "Plant Inventory"/>
+    <Plants @delete-plant="deletePlant" :plants="plants"/>
   </div>
 </template>
 
 <script>
-import Header from '../../../Downloads/vue-plant-inventory-2021/src/components/Header'
+import Header from './components/Header'
+import Plants from './components/Plants'
 export default {
   name: 'App',
   components: {
     Header,
+    Plants
   },
   data(){
     return{
-      tasks:[]
+      plants:[]
     }
+  },
+  methods: {
+    deletePlant(id){
+      if (confirm('Are you sure about deleting this plant?')) {
+        this.plants = this.plants.filter((plant) => 
+        plant.id !== id)
+      } 
+    },
+  },
+  created() {
+      this.plants = [
+      {
+        id: 1,
+        text:'Plant Tenzin',
+        description:'Place holder of plant 1',
+        reminder: true,
+      },
+
+      {
+        id: 2,
+        text:'Plant Leen',
+        description:'Place holder of plant 2',
+        reminder: true,
+      },
+
+      {
+        id: 3,
+        text: 'Plant Cameron',
+        description:'Place holder of plant 3',
+        reminder: false ,
+      }
+
+    ]
   }
 }
 </script>
