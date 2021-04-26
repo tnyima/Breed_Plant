@@ -2,17 +2,21 @@
   <div class = "container">
     <Header title = "Plant Inventory"/>
     <Plants @delete-plant="deletePlant" :plants="plants"/>
+    <!-- <PlantRenderer/> -->
+    <Plantrender2 :level="3" />
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import Plants from './components/Plants'
+import Plantrender2 from './components/Plantrender2'
 export default {
   name: 'App',
   components: {
     Header,
-    Plants
+    Plants,
+    Plantrender2
   },
   data(){
     return{
