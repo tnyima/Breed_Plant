@@ -17,7 +17,7 @@ function setup() {
         rightBranchSize : .42,
         rightBranchAngle : Math.PI/9,
         midBranchSize : .8,
-        flowerProb : 0.06,
+        flowerProb : 0.01,
         flower : sunflower,
         berryProb: 0,
         berry : null
@@ -31,9 +31,9 @@ function setup() {
         rightBranchSize : .65,
         rightBranchAngle : Math.PI/7,
         midBranchSize : .6,
-        flowerProb : 0.2,
+        flowerProb : 0.06,
         flower : corpseFlower,
-        berryProb : 0.2,
+        berryProb : 0.1,
         berry : raspberry
     }
 
@@ -101,12 +101,7 @@ function breedPlant(plant1, plant2){
 }
 
 function randomInRange(value1, value2){
-    if (value1 > value2){
-        return Math.random() * (value1 - value2) + value2;
-    }
-    else{
-        return Math.random() * (value2 - value1) + value1;
-    }
+    return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2);
 }
 
 function randomChoice(value1, value2){
