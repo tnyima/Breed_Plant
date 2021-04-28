@@ -127,7 +127,6 @@ function breedPlant(plant1, plant2){
 
 function randomInRange(value1, value2){
     return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2);
-
 }
 
 function randomChoice(value1, value2){
