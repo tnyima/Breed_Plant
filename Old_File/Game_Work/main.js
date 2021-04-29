@@ -5,7 +5,11 @@ function preload() {
     corpseFlower = loadImage("flower-transparent1.png");
     basicLeaf = loadImage("leaf.png");
     pear = loadImage("pear.png");
-    blueberry = loadImage("blueberry.png")
+    blueberry = loadImage("blueberry.png");
+    strawberry = loadImage("strawberry.png");
+    strawberry1 = loadImage("strawberry1.png");
+    orange = loadImage("orange.png");
+
 }
 function setup() {
     createCanvas(screen.width, screen.height*0.75);
@@ -22,9 +26,9 @@ function setup() {
         rightBranchAngle : Math.PI/9,
         midBranchSize : .8,
         flowerProb : 0.01,
-        flower : sunflower,
+        flower : orange,
         berryProb: 0.1,
-        berry : blueberry,
+        berry : strawberry1,
         leafProb : 0.2,
         leaf: basicLeaf
     }
