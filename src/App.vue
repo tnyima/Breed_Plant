@@ -8,6 +8,7 @@
 <script>
 import Header from './components/Header'
 import Inventory from './components/Inventory'
+import p5 from 'p5';
 
 export default {
   name: 'App',
@@ -29,11 +30,6 @@ export default {
       } 
     },
   },
-  preload() {
-    this.sunflower = loadImage("sunflower.png");
-    this.raspberry = loadImage("raspberry.png");
-    this.corpseFlower = loadImage("flower-transparent1.png")
-  },
   created() {
     this.plants = [
       {
@@ -50,7 +46,7 @@ export default {
         rightBranchAngle : Math.PI/9,
         midBranchSize : .8,
         flowerProb : 0.06,
-        flower : this.sunflower,
+        flower : "sunflower",
         berryProb: 0,
         berry : null
       },
@@ -69,7 +65,7 @@ export default {
         rightBranchAngle : Math.PI/7,
         midBranchSize : .6,
         flowerProb : 0.2,
-        flower : this.corpseFlower,
+        flower : "corpseFlower",
         berryProb : 0.2,
         berry : this.raspberry
       },
@@ -97,10 +93,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .container {
-  max-width: 500px;
+  width: 50%;
   margin: 30px auto;
   overflow: auto;
-  min-height: 300px;
+  height: 70%;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;

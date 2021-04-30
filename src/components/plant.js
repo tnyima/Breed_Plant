@@ -44,7 +44,7 @@ function setup() {
     // draw(280, 580, 40, Math.PI * 1.5, 1, 2)
 }
 
-function draw(plant, x, y, size, theta, branchDirection, levels, canvas) {
+function drawPlant_separateFile(plant, x, y, size, theta, branchDirection, levels, canvas) {
     if (levels <= 0)  {
         return;
     }
