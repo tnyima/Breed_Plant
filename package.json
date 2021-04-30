@@ -1,15 +1,15 @@
 {
-  "name": "vue-plant-inventory-2021",
+  "name": "breed-plant",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "../Inventory_Prototype/node_modules/.bin/vue-cli-service serve",
-    "build": "../Inventory_Prototype/node_modules/.bin/vue-cli-service build"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0",
-    "p5": "^0.7.2"
+    "p5": "^0.7.2",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
