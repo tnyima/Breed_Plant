@@ -1,4 +1,7 @@
 <template>
+<!--  <vue-load-image>-->
+<!--    <img src="./assets/images/pear.png">-->
+<!--  </vue-load-image>-->
   <div class = "container">
     <Header title = "Plant Inventory"/>
     <Inventory @delete-plant="deletePlant" :plants="plants"/>
@@ -9,6 +12,7 @@
 import Header from './components/Header'
 import Inventory from './components/Inventory'
 import p5 from 'p5';
+// import preloadImage from 'vue-preload-image'
 
 export default {
   name: 'App',
@@ -38,8 +42,9 @@ export default {
         description:'Place holder of plant 1',
         reminder: true,
         radius: 20, // Replace this with real plant parameters
-        initialSize : 80,
-        strokeSizeSensitivity : 1.2,
+        initialSize : 20,
+        strokeWeight : this.initialSize * 0.05,
+        strokeWeightSensitivity : 1.2,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
         rightBranchSize : .42,
@@ -57,8 +62,9 @@ export default {
         description:'Place holder of plant 2',
         reminder: true,
         radius: 50,  // Replace this with real plant parameters
-        initialSize : 250,
-        strokeSizeSensitivity : 1.5,
+        initialSize : 20,
+        strokeWeight : this.initialSize * 0.02,
+        strokeWeightSensitivity : 1.5,
         leftBranchSize : .42,
         leftBranchAngle : Math.PI/4,
         rightBranchSize : .65,

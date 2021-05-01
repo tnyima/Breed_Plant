@@ -4,6 +4,7 @@
 
 <script>
 import p5 from 'p5';
+
 export default{
     props: {
       plant: {},
@@ -14,9 +15,15 @@ export default{
       new p5(
           (graphics) => {
             graphics.setup = () => {
-              graphics.createCanvas(900, 900);
+              graphics.createCanvas(150, 150);
               graphics.background(174, 217, 165)
-              this.drawPlant(graphics, this.plant, 480, 880, this.plant.initialSize, Math.PI * 1.5, 1, 8);
+
+              // let pear
+              // pear = require(".@/assets/images/pear.png")
+              // pear = graphics.loadImage(require("@/assets/images/pear.png"));
+              // image(pear, 20, 20)
+
+              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, this.plant.initialSize, Math.PI * 1.5, 1, 8);
             }
           },
           this.$el
