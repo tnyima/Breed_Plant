@@ -1,7 +1,7 @@
 <template>
-  <button: @click = "Breed()" :style = " {
+  <button @click = "Breed()" :style = " {
   background: color} " class="btn"> {{ text }}
-  </button:>
+  </button>
 </template>
 
 <script>

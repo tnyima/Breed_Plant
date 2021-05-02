@@ -22,7 +22,7 @@ export default{
     components: {
         PlantRenderer,
     },
-    emits: ['delete-plant'],
+    emits: ['delete-plant','toggle-reminder'],
 }
 </script>
 

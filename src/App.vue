@@ -4,7 +4,7 @@
 <!--  </vue-load-image>-->
   <div class = "container">
     <Header title = "Plant Inventory"/>
-    <Inventory @delete-plant="deletePlant" :plants="plants"/>
+    <Inventory @toggle-reminder="toggleReminder" @delete-plant="deletePlant" :plants="plants"/>
   </div>
 </template>
 
@@ -33,6 +33,10 @@ export default {
         plant.id !== id)
       } 
     },
+    toggleReminder(id){
+      this.plants = this.plants.map
+      ((plant) => plant.id === id ? {...plant, reminder: !plant.reminder } : plant)
+    }
   },
   created() {
     this.plants = [
@@ -80,6 +84,55 @@ export default {
         id: 3,
         text: 'Plant Cameron',
         description:'Place holder of plant 3',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 4,
+        text: 'Plant 4',
+        description:'Place holder of plant 4',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 5,
+        text: 'Plant 5',
+        description:'Place holder of plant 5',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 6,
+        text: 'Plant 6',
+        description:'Place holder of plant 6',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 7,
+        text: 'Plant 7',
+        description:'Place holder of plant 7',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 8,
+        text: 'Plant 8',
+        description:'Place holder of plant 8',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 9,
+        text: 'Plant 9',
+        description:'Place holder of plant 9',
+        reminder: false,
+        radius: 120,  // Replace this with real plant parameters
+      },
+      {
+        id: 10,
+        text: 'Plant 10',
+        description:'Place holder of plant 10',
         reminder: false,
         radius: 120,  // Replace this with real plant parameters
       }
