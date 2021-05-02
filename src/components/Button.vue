@@ -2,6 +2,9 @@
   <button @click = "Breed()" :style = " {
   background: color} " class="btn"> {{ text }}
   </button>
+  <button @click = "Return()" :style = " {
+  background: color} " class="btn"> {{ tReturn ? 'Close' : 'Return' }}
+  </button>
 </template>
 
 <script>
@@ -15,6 +18,9 @@ export default {
       Breed(){
           console.log("Breed");
       },
+    Return(){
+      this.$emit('toggle-return')
+    },
   }
 }
 </script>

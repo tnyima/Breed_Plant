@@ -3,14 +3,20 @@
 <!--    <img src="./assets/images/pear.png">-->
 <!--  </vue-load-image>-->
   <div class = "container">
-    <Header title = "Plant Inventory"/>
-    <Inventory @toggle-reminder="toggleReminder" @delete-plant="deletePlant" :plants="plants"/>
+    <Header @toggle-return="toggleReturn"
+            title = "Plant Inventory"
+            :tReturn="tReturn"/>
+    <div v-show="tReturn"><Return/></div>
+    <Inventory @toggle-reminder="toggleReminder"
+               @delete-plant="deletePlant"
+               :plants="plants"/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import Inventory from './components/Inventory'
+import Return from './components/Return'
 import p5 from 'p5';
 // import preloadImage from 'vue-preload-image'
 
@@ -18,15 +24,19 @@ export default {
   name: 'App',
   components: {
     Header,
-    // Inventory,
+    Inventory,
+    Return
   },
   data(){
     return{
-      plants:[]
-
+      plants:[],
+      tReturn: false
     }
   },
   methods: {
+    toggleReturn(){
+      this.tReturn = !this.tReturn
+    },
     deletePlant(id){
       if (confirm('Are you sure about deleting this plant?')) {
         this.plants = this.plants.filter((plant) => 

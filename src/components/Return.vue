@@ -1,16 +1,19 @@
 <template>
-  <button @click = "Breed()" :style = " {
-  background: color} " class="btn"> {{ text }}
-  </button>
-  <button @click = "Plant1()" :style = " {
+  <div class = "container">
+    <Header title = "Dr'L's Garden"/>
+    <button @click = "BreedPlant()" :style = " {
+  background: color} " class="btn"> {{ "Breed" }}
+    </button>
+    <button @click = "Plant1()" :style = " {
   background: color} " class="btn"> {{ "Plant 1" }}
-  </button>
-  <button @click = "Plant2()" :style = " {
+    </button>
+    <button @click = "Plant2()" :style = " {
   background: color} " class="btn"> {{ "Plant 2" }}
-  </button>
-  <button @click = "Reselect()" :style = " {
+    </button>
+    <button @click = "Reselect()" :style = " {
   background: color} " class="btn"> {{ "Reselect" }}
-  </button>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -60,13 +63,13 @@ let plant3 = {
 }
 let plantInventory = [plant1,plant2,plant3]
 export default {
-  name: "Button",
+  name: "Return",
   props: {
     text:String,
     color:String
   },
   methods:{
-    Breed(){
+    BreedPlant(){
       let chosenPlants = plantInventory.filter(plant => plant.chosen === true);
       let childPlant = this.breedPlant(chosenPlants[0], chosenPlants[1]);
       console.log(chosenPlants)
