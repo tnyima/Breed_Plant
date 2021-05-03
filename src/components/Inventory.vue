@@ -1,7 +1,11 @@
 <template>
-    <div :key = "plant.id" v-for = "plant in plants">
-      <div @click="$emit('toggle-reminder',plant.id)" :class =
-          "[plant.reminder ? 'reminder' : '', 'plant']">
+  <div>
+    <button @click="breedSelected()" class="btn">
+      Breed
+    </button>
+    <div :key="plant.id" v-for="plant in plants">
+      <div @click="toggleSelection(plant.id)"
+           :class="[plant.selected ? 'selected' : '', 'plant']">
         <h3>{{ plant.text }}
           <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
         </h3>
@@ -9,12 +13,13 @@
         <PlantRenderer :plant="plant" />
       </div>
     </div>
+  </div>
 </template>
 
 <script>
 import PlantRenderer from "./PlantRenderer"
 
-export default{
+export default {
     name: 'Inventory',
     props: {
         plants: Array
@@ -22,7 +27,16 @@ export default{
     components: {
         PlantRenderer,
     },
-    emits: ['delete-plant','toggle-reminder'],
+    methods: {
+      toggleSelection(id) {
+        for (const plant of this.plants) {
+          if (plant.id === id) {
+            plant.selected = !plant.selected;
+          }
+        }
+      }
+    },
+    emits: ['delete-plant'],
 }
 </script>
 
@@ -38,7 +52,7 @@ export default{
   cursor: pointer;
 }
 
-.plant.reminder {
+.plant.selected {
   border-left: 5px solid green;
 }
 

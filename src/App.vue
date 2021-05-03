@@ -3,11 +3,7 @@
 <!--    <img src="./assets/images/pear.png">-->
 <!--  </vue-load-image>-->
   <div class = "container">
-    <Header @toggle-return="toggleReturn"
-            title = "Dr L's Plant Inventory"
-            :tReturn="tReturn"/>
-    <Inventory @toggle-reminder="toggleReminder"
-               @delete-plant="deletePlant"
+    <Inventory @delete-plant="deletePlant"
                :plants="plants"/>
     <router-view :tReturn="tReturn"></router-view>
     <Footer/>
@@ -15,7 +11,6 @@
 </template>
 
 <script>
-import Header from './components/Header'
 import Inventory from './components/Inventory'
 import Footer from "@/components/Footer"
 import p5 from 'p5';
@@ -24,7 +19,6 @@ import p5 from 'p5';
 export default {
   name: 'App',
   components: {
-    Header,
     Inventory,
     Footer
   },
@@ -43,10 +37,6 @@ export default {
         this.plants = this.plants.filter((plant) => 
         plant.id !== id)
       } 
-    },
-    toggleReminder(id){
-      this.plants = this.plants.map
-      ((plant) => plant.id === id ? {...plant, reminder: !plant.reminder } : plant)
     }
   },
   created() {
@@ -55,7 +45,6 @@ export default {
         id: 1,
         text:'Plant Tenzin',
         description:'Place holder of plant 1',
-        reminder: true,
         radius: 20, // Replace this with real plant parameters
         initialSize : 20,
         strokeWeight : this.initialSize * 0.05,
@@ -75,7 +64,6 @@ export default {
         id: 2,
         text:'Plant Leen',
         description:'Place holder of plant 2',
-        reminder: true,
         radius: 50,  // Replace this with real plant parameters
         initialSize : 20,
         strokeWeight : this.initialSize * 0.02,
@@ -95,56 +83,48 @@ export default {
         id: 3,
         text: 'Plant Cameron',
         description:'Place holder of plant 3',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 4,
         text: 'Plant 4',
         description:'Place holder of plant 4',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 5,
         text: 'Plant 5',
         description:'Place holder of plant 5',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 6,
         text: 'Plant 6',
         description:'Place holder of plant 6',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 7,
         text: 'Plant 7',
         description:'Place holder of plant 7',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 8,
         text: 'Plant 8',
         description:'Place holder of plant 8',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 9,
         text: 'Plant 9',
         description:'Place holder of plant 9',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       },
       {
         id: 10,
         text: 'Plant 10',
         description:'Place holder of plant 10',
-        reminder: false,
         radius: 120,  // Replace this with real plant parameters
       }
     ]
