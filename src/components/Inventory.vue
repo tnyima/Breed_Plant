@@ -4,7 +4,7 @@
       Breed
     </button>
     <div :key="plant.id" v-for="plant in plants">
-      <div @click="toggleSelection(plant.id)"
+      <div @click="toggleSelection(plant)"
            :class="[plant.selected ? 'selected' : '', 'plant']">
         <h3>{{ plant.text }}
           <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
@@ -28,11 +28,17 @@ export default {
         PlantRenderer,
     },
     methods: {
-      toggleSelection(id) {
-        for (const plant of this.plants) {
-          if (plant.id === id) {
-            plant.selected = !plant.selected;
-          }
+      toggleSelection(plant) {
+        plant.selected = !plant.selected;
+      },
+      breedSelected() {
+        let selectedPlants = this.plants.filter(plant => plant.selected);
+        this.plants.unshift({
+          ...selectedPlants[0],
+          id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1
+        });
+        for(const plant of this.plants) {
+          plant.selected = false;
         }
       }
     },
