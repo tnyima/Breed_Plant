@@ -13,8 +13,6 @@
 <script>
 import Inventory from './components/Inventory'
 import Footer from "@/components/Footer"
-import p5 from 'p5';
-// import preloadImage from 'vue-preload-image'
 
 export default {
   name: 'App',
@@ -59,7 +57,6 @@ export default {
         berryProb: 0,
         berry : null
       },
-
       {
         id: 2,
         text:'Plant Leen',
@@ -78,24 +75,53 @@ export default {
         berryProb : 0.2,
         berry : this.raspberry
       },
-
       {
         id: 3,
         text: 'Plant Cameron',
         description:'Place holder of plant 3',
-        radius: 120,  // Replace this with real plant parameters
+        initialSize : 80,
+        strokeSizeSensitivity : 1.2,
+        leftBranchSize : .51,
+        leftBranchAngle : Math.PI/7,
+        rightBranchSize : .42,
+        rightBranchAngle : Math.PI/9,
+        midBranchSize : .8,
+        flowerProb : 0.06,
+        flower : null,
+        berryProb: 0,
+        berry : null,
       },
       {
         id: 4,
         text: 'Plant 4',
-        description:'Place holder of plant 4',
-        radius: 120,  // Replace this with real plant parameters
+        description: 'Place holder of plant 4',
+        initialSize: 250,
+        strokeSizeSensitivity: 1.5,
+        leftBranchSize: .42,
+        leftBranchAngle: Math.PI / 4,
+        rightBranchSize: .65,
+        rightBranchAngle: Math.PI / 7,
+        midBranchSize: .6,
+        flowerProb: 0.2,
+        flower: null,
+        berryProb: 0.2,
+        berry: null,
       },
       {
         id: 5,
         text: 'Plant 5',
         description:'Place holder of plant 5',
-        radius: 120,  // Replace this with real plant parameters
+        initialSize : 200,
+        strokeSizeSensitivity : 1.4,
+        leftBranchSize : .41,
+        leftBranchAngle : Math.PI/4,
+        rightBranchSize : .05,
+        rightBranchAngle : Math.PI/7,
+        midBranchSize : .6,
+        flowerProb : 0.2,
+        flower : null,
+        berryProb : 0.2,
+        berry : null,
       },
       {
         id: 6,
