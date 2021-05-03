@@ -6,10 +6,9 @@
     <div :key="plant.id" v-for="plant in plants">
       <div @click="toggleSelection(plant)"
            :class="[plant.selected ? 'selected' : '', 'plant']">
-        <h3>{{ plant.text }}
+        <h3>
           <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
         </h3>
-        <p>{{ plant.description }}</p>
         <PlantRenderer :plant="plant" />
       </div>
     </div>
@@ -30,6 +29,19 @@ export default {
     methods: {
       toggleSelection(plant) {
         plant.selected = !plant.selected;
+        let count = 0
+        for(const plant of this.plants) {
+          if (plant.selected === true ){
+            count += 1
+          }
+        }
+        if (count > 2){
+          alert("You may not select more than two plant, " +
+              "please reselect your parent plants")
+          for(const plant of this.plants) {
+            plant.selected = false;
+          }
+        }
       },
 
       breedSelected() {

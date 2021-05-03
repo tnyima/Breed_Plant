@@ -41,8 +41,6 @@ export default {
     this.plants = [
       {
         id: 1,
-        text:'Plant Tenzin',
-        description:'Place holder of plant 1',
         radius: 20, // Replace this with real plant parameters
         initialSize : 20,
         strokeWeight : this.initialSize * 0.05,
@@ -59,8 +57,6 @@ export default {
       },
       {
         id: 2,
-        text:'Plant Leen',
-        description:'Place holder of plant 2',
         radius: 50,  // Replace this with real plant parameters
         initialSize : 20,
         strokeWeight : this.initialSize * 0.02,
@@ -77,8 +73,6 @@ export default {
       },
       {
         id: 3,
-        text: 'Plant Cameron',
-        description:'Place holder of plant 3',
         initialSize : 80,
         strokeSizeSensitivity : 1.2,
         leftBranchSize : .51,
@@ -93,8 +87,6 @@ export default {
       },
       {
         id: 4,
-        text: 'Plant 4',
-        description: 'Place holder of plant 4',
         initialSize: 250,
         strokeSizeSensitivity: 1.5,
         leftBranchSize: .42,
@@ -109,8 +101,6 @@ export default {
       },
       {
         id: 5,
-        text: 'Plant 5',
-        description:'Place holder of plant 5',
         initialSize : 200,
         strokeSizeSensitivity : 1.4,
         leftBranchSize : .41,
@@ -122,36 +112,6 @@ export default {
         flower : null,
         berryProb : 0.2,
         berry : null,
-      },
-      {
-        id: 6,
-        text: 'Plant 6',
-        description:'Place holder of plant 6',
-        radius: 120,  // Replace this with real plant parameters
-      },
-      {
-        id: 7,
-        text: 'Plant 7',
-        description:'Place holder of plant 7',
-        radius: 120,  // Replace this with real plant parameters
-      },
-      {
-        id: 8,
-        text: 'Plant 8',
-        description:'Place holder of plant 8',
-        radius: 120,  // Replace this with real plant parameters
-      },
-      {
-        id: 9,
-        text: 'Plant 9',
-        description:'Place holder of plant 9',
-        radius: 120,  // Replace this with real plant parameters
-      },
-      {
-        id: 10,
-        text: 'Plant 10',
-        description:'Place holder of plant 10',
-        radius: 120,  // Replace this with real plant parameters
       }
     ]
   }
