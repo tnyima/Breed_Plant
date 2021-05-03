@@ -48,7 +48,7 @@ export default{
               g.push();
               g.translate(centerX, centerY);
               g.rotate(theta + Math.PI / 2);
-              g.image(g.loadImage("/Users/tenzinnyima/Documents/GitHub/Breed_Plant/src/assets/images/sunflower.png"), 0, 0, 60, 60);
+              //g.image(g.loadImage("/Users/tenzinnyima/Documents/GitHub/Breed_Plant/src/assets/images/sunflower.png"), 0, 0, 60, 60);
               g.pop();
             }
           } else {
@@ -56,7 +56,7 @@ export default{
               g.push();
               g.translate(centerX, centerY);
               g.rotate(theta + Math.PI / 2);
-              g.image(plant.berry, 0, 0, 20, 20);
+              //g.image(plant.berry, 0, 0, 20, 20);
               g.pop();
             }
           }
@@ -86,5 +86,10 @@ export default{
 </script>
 
 <style scoped>
+
+.plantContainer{
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+}
 </style>
 

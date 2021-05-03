@@ -36,8 +36,8 @@ export default {
           }
         }
         if (count > 2){
-          alert("You may not select more than two plant, " +
-              "please reselect your parent plants")
+          //alert("You may not select more than two plant, " +
+              //"please reselect your parent plants")
           for(const plant of this.plants) {
             plant.selected = false;
           }
@@ -96,8 +96,9 @@ export default {
 .plant {
   background: #f4f4f4;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 5px 5px;
   cursor: pointer;
+  display: grid;
 }
 
 .plant.selected {

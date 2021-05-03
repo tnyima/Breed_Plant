@@ -129,13 +129,16 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .container {
-  width: 50%;
+  width: 100%;
   margin: 30px auto;
   overflow: auto;
-  height: 70%;
+  height: 100%;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 175px 180px 180px;
 }
 .btn {
   display: inline-block;
