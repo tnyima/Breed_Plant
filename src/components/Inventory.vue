@@ -1,6 +1,6 @@
 <template>
     <div :key = "plant.id" v-for = "plant in plants">
-      <div @dblclick="$emit('toggle-reminder',plant.id)" :class =
+      <div @click="$emit('toggle-reminder',plant.id)" :class =
           "[plant.reminder ? 'reminder' : '', 'plant']">
         <h3>{{ plant.text }}
           <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
