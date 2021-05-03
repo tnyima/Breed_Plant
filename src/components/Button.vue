@@ -3,7 +3,7 @@
   background: color} " class="btn"> {{ text }}
   </button>
   <button @click = "Return()" :style = " {
-  background: color} " class="btn"> {{ tReturn ? 'Close' : 'Return' }}
+  background: color} " class="btn"> {{ "Open Lab"}}
   </button>
 </template>
 

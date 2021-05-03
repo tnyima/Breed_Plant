@@ -1,6 +1,6 @@
 <template>
   <div class = "container">
-    <Header title = "Dr'L's Garden"/>
+    <title>Breed your plant Here</title>
     <button @click = "BreedPlant()" :style = " {
   background: color} " class="btn"> {{ "Breed" }}
     </button>

@@ -4,19 +4,20 @@
 <!--  </vue-load-image>-->
   <div class = "container">
     <Header @toggle-return="toggleReturn"
-            title = "Plant Inventory"
+            title = "Dr L's Plant Inventory"
             :tReturn="tReturn"/>
-    <div v-show="tReturn"><Return/></div>
     <Inventory @toggle-reminder="toggleReminder"
                @delete-plant="deletePlant"
                :plants="plants"/>
+    <router-view :tReturn="tReturn"></router-view>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import Inventory from './components/Inventory'
-import Return from './components/Return'
+import Footer from "@/components/Footer"
 import p5 from 'p5';
 // import preloadImage from 'vue-preload-image'
 
@@ -25,7 +26,7 @@ export default {
   components: {
     Header,
     Inventory,
-    Return
+    Footer
   },
   data(){
     return{
