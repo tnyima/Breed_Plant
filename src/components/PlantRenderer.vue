@@ -47,7 +47,7 @@ export default{
               g.push();
               g.translate(x2, y2);
               g.rotate(theta + Math.PI / 2);
-              g.image(pear, 0, 0, 6, 6);
+              g.image(pear, 0, 0, g.height * 0.055, g.height * 0.055);
               g.pop();
             });
           }
