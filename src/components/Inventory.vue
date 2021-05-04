@@ -58,7 +58,7 @@ export default {
       breedPlant(plant1, plant2) {
         return {
           initialSize: this.randomInRange(plant1.initialSize, plant2.initialSize),
-          strokeSizeSensitivity: this.randomInRange(plant1.strokeSizeSensitivity, plant2.strokeSizeSensitivity),
+          strokeWeightSensitivity: this.randomInRange(plant1.strokeWeightSensitivity, plant2.strokeWeightSensitivity),
           leftBranchSize: this.randomInRange(plant1.leftBranchSize, plant2.leftBranchSize),
           leftBranchAngle: this.randomInRange(plant1.leftBranchAngle, plant2.leftBranchAngle),
           rightBranchSize: this.randomInRange(plant1.rightBranchSize, plant2.rightBranchSize),
