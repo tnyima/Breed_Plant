@@ -38,8 +38,6 @@ export default {
           }
         }
         if (count > 2){
-          //alert("You may not select more than two plant, " +
-              //"please reselect your parent plants")
           for(const plant of this.plants) {
             plant.selected = false;
           }
@@ -48,9 +46,6 @@ export default {
 
       breedSelected() {
         let selectedPlants = this.plants.filter(plant => plant.selected);
-        // if (selectedPlants.length !== 2){
-        //   alert("Please select two parent plants for breeding")
-        // }
         this.plants.unshift({
           ...this.breedPlant(selectedPlants[0], selectedPlants[1]),
           id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1
@@ -77,11 +72,7 @@ export default {
       },
 
       randomInRange(value1, value2) {
-        if (value1 > value2){
-          return Math.random() * (value1 - value2) + value2;
-        } else{
-          return Math.random() * (value2 - value1) + value1;
-        }
+        return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2)
       },
 
       randomChoice(value1, value2) {

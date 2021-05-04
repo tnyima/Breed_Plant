@@ -62,13 +62,7 @@ export default{
         this.drawPlant(g, plant, x2, y2, size * plant.rightBranchSize, theta - branchDirection * plant.leftBranchAngle, branchDirection, levels - 1);
         this.drawPlant(g, plant, x2, y2, size * plant.midBranchSize, theta, -branchDirection, levels - 1);
       }
-    },
-      randomChoice(value1, value2){
-        return Math.random() < 0.5 ? value1 : value2;
-      },
-      randomInRange(value1, value2){
-        return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2)
-      }
+    }
 };
 </script>
 
