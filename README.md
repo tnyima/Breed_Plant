@@ -1,7 +1,6 @@
 # to do
 - enlarged canvas that shows whatever the last selected plant was
-- fix the placement of the images
-- stroke and size stuff
+- fix the placement of the images (for now)
 - make all the image files lower resolution
 - create a few starter plants that utilize all the drawn elements
 - fix the grid to work for different screen sizes
