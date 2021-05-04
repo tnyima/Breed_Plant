@@ -41,8 +41,8 @@ export default {
     this.plants = [
       {
         id: 1,
-        initialSize : 0.1,
-        strokeWeightSensitivity : 1.2,
+        initialSize : 0.12,
+        strokeWeightSensitivity : 0.1,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
         rightBranchSize : .42,
@@ -58,7 +58,7 @@ export default {
       {
         id: 2,
         initialSize : 0.15,
-        strokeWeightSensitivity : 1.5,
+        strokeWeightSensitivity : 0.32,
         leftBranchSize : .42,
         leftBranchAngle : Math.PI/4,
         rightBranchSize : .65,
@@ -73,8 +73,8 @@ export default {
       },
       {
         id: 3,
-        initialSize : 0.08,
-        strokeWeightSensitivity : 1.6,
+        initialSize : 0.24,
+        strokeWeightSensitivity : 0.4,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
         rightBranchSize : .42,
@@ -91,7 +91,7 @@ export default {
       {
         id: 4,
         initialSize: 0.2,
-        strokeWeightSensitivity : 1.1,
+        strokeWeightSensitivity : 0.08,
         leftBranchSize: .42,
         leftBranchAngle: Math.PI / 4,
         rightBranchSize: .65,
@@ -107,17 +107,17 @@ export default {
       {
         id: 5,
         initialSize : 0.17,
-        strokeWeightSensitivity : 1.8,
+        strokeWeightSensitivity : 0.02,
         leftBranchSize : .41,
-        leftBranchAngle : Math.PI/4,
+        leftBranchAngle : Math.PI/2.5,
         rightBranchSize : .05,
-        rightBranchAngle : Math.PI/7,
+        rightBranchAngle : Math.PI/3.1,
         midBranchSize : .6,
         flowerProb : 0.2,
-        flower : null,
+        flower : "sunflower",
         berryProb : 0.2,
         berry : null,
-        leafProb: 0,
+        leafProb: 0.4,
         leaf : null
       }
     ]

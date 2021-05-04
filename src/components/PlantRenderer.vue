@@ -52,7 +52,7 @@ export default{
             });
           }
         }
-        g.strokeWeight(Math.pow(plant.strokeWeightSensitivity, levels))
+        g.strokeWeight(g.height * 0.03 * (levels * plant.strokeWeightSensitivity))
         g.line(x, y, x2, y2)
 
         this.drawPlant(g, plant, x2, y2, size * plant.leftBranchSize, theta + branchDirection * plant.rightBranchAngle, branchDirection, levels - 1);
