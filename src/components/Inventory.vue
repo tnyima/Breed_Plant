@@ -62,8 +62,6 @@ export default {
           }
         }
         if (count > 2){
-          //alert("You may not select more than two plant, " +
-              //"please reselect your parent plants")
           for(const plant of this.plants) {
             plant.selected = false;
           }
@@ -73,9 +71,6 @@ export default {
 
       breedSelected() {
         let selectedPlants = this.plants.filter(plant => plant.selected);
-        // if (selectedPlants.length !== 2){
-        //   alert("Please select two parent plants for breeding")
-        // }
         this.plants.unshift({
           ...this.breedPlant(selectedPlants[0], selectedPlants[1]),
           id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1
@@ -88,7 +83,7 @@ export default {
       breedPlant(plant1, plant2) {
         return {
           initialSize: this.randomInRange(plant1.initialSize, plant2.initialSize),
-          strokeSizeSensitivity: this.randomInRange(plant1.strokeSizeSensitivity, plant2.strokeSizeSensitivity),
+          strokeWeightSensitivity: this.randomInRange(plant1.strokeWeightSensitivity, plant2.strokeWeightSensitivity),
           leftBranchSize: this.randomInRange(plant1.leftBranchSize, plant2.leftBranchSize),
           leftBranchAngle: this.randomInRange(plant1.leftBranchAngle, plant2.leftBranchAngle),
           rightBranchSize: this.randomInRange(plant1.rightBranchSize, plant2.rightBranchSize),
@@ -97,16 +92,14 @@ export default {
           flowerProb: this.randomInRange(plant1.flowerProb, plant2.flowerProb),
           flower: this.randomChoice(plant1.flower, plant2.flower),
           berryProb: this.randomInRange(plant1.berryProb, plant2.berryProb),
-          berry: this.randomChoice(plant1.berry, plant2.berry)
+          berry: this.randomChoice(plant1.berry, plant2.berry),
+          leafProb: this.randomInRange(plant1.leafProb, plant2.leafProb),
+          leaf: this.randomChoice(plant1.leaf, plant2.leaf)
         }
       },
 
       randomInRange(value1, value2) {
-        if (value1 > value2){
-          return Math.random() * (value1 - value2) + value2;
-        } else{
-          return Math.random() * (value2 - value1) + value1;
-        }
+        return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2)
       },
 
       randomChoice(value1, value2) {

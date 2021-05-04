@@ -41,40 +41,40 @@ export default {
     this.plants = [
       {
         id: 1,
-        radius: 20, // Replace this with real plant parameters
         initialSize : 20,
-        strokeWeight : this.initialSize * 0.05,
         strokeWeightSensitivity : 1.2,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
         rightBranchSize : .42,
         rightBranchAngle : Math.PI/9,
         midBranchSize : .8,
-        flowerProb : 0.06,
+        flowerProb : 0.04,
         flower : "sunflower",
         berryProb: 0,
-        berry : null
+        berry : null,
+        leafProb: 0.02,
+        leaf : "leaf"
       },
       {
         id: 2,
-        radius: 50,  // Replace this with real plant parameters
         initialSize : 20,
-        strokeWeight : this.initialSize * 0.02,
         strokeWeightSensitivity : 1.5,
         leftBranchSize : .42,
         leftBranchAngle : Math.PI/4,
         rightBranchSize : .65,
         rightBranchAngle : Math.PI/7,
         midBranchSize : .6,
-        flowerProb : 0.2,
+        flowerProb : 0.03,
         flower : "sunflower",
-        berryProb : 0.2,
-        berry : "raspberry"
+        berryProb : 0.02,
+        berry : "raspberry",
+        leafProb: 0.4,
+        leaf : "leaf"
       },
       {
         id: 3,
-        initialSize : 80,
-        strokeSizeSensitivity : 1.2,
+        initialSize : 30,
+        strokeWeightSensitivity : 1.6,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
         rightBranchSize : .42,
@@ -84,11 +84,14 @@ export default {
         flower : null,
         berryProb: 0,
         berry : null,
+        leafProb: 0,
+        leaf : null
+
       },
       {
         id: 4,
-        initialSize: 250,
-        strokeSizeSensitivity: 1.5,
+        initialSize: 50,
+        strokeWeightSensitivity : 1.1,
         leftBranchSize: .42,
         leftBranchAngle: Math.PI / 4,
         rightBranchSize: .65,
@@ -98,11 +101,13 @@ export default {
         flower: null,
         berryProb: 0.2,
         berry: null,
+        leafProb: 0,
+        leaf : null
       },
       {
         id: 5,
-        initialSize : 200,
-        strokeSizeSensitivity : 1.4,
+        initialSize : 42,
+        strokeWeightSensitivity : 1.8,
         leftBranchSize : .41,
         leftBranchAngle : Math.PI/4,
         rightBranchSize : .05,
@@ -112,6 +117,8 @@ export default {
         flower : null,
         berryProb : 0.2,
         berry : null,
+        leafProb: 0,
+        leaf : null
       }
     ]
   }
