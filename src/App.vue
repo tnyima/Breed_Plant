@@ -137,11 +137,11 @@ body {
 }
 .container {
   width: 100%;
-  margin: 30px auto;
+  /*margin: 30px auto;*/
   overflow: auto;
   height: 100%;
-  padding: 30px;
-  border-radius: 5px;
+  /*padding: 30px;*/
+  /*border-radius: 5px;*/
 }
 .btn {
   display: inline-block;
