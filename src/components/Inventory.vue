@@ -1,4 +1,19 @@
 <template>
+<!--  <var h = window.innerHeight;></var>-->
+<!--  <var w = window.innerWidth;></var>-->
+<!--  <div :class="plant.enlarged">-->
+<!--    <PlantRenderer :plant="plant" />-->
+<!--  </div>-->
+  <div class="plant.enlarged" style="display: inline-block;background: #8bf18b; width: 90%; height: 500px;">
+    <PlantRenderer :plant="plant" />
+
+    <!--    <div style="height: 30px">-->
+<!--      <button @click="breedSelected()" class="btn" style="float: right; height: 20px; width: 20px; padding: 0; background: #3e8e41">-->
+<!--&lt;!&ndash;        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikaplant.com%2Fen%2F&psig=AOvVaw1kUgeUQMW6ZnbHW2avABLW&ust=1620239024226000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjWzfDSsPACFQAAAAAdAAAAABAD">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img src="./assets/images/pear.png">&ndash;&gt;-->
+<!--      </button>-->
+<!--    </div>-->
+  </div>
   <div>
     <button @click="breedSelected()" class="btn">
       Breed
@@ -28,9 +43,18 @@ export default {
     components: {
         PlantRenderer,
     },
+    data () {
+      return{
+        selectedId : 0
+      }
+    },
     methods: {
       toggleSelection(plant) {
         plant.selected = !plant.selected;
+        if (plant.selected === true){
+          this.selectedId = plant.id;
+          console.log(this.selectedId);
+        }
         let count = 0
         for(const plant of this.plants) {
           if (plant.selected === true ){
@@ -45,6 +69,7 @@ export default {
           }
         }
       },
+
 
       breedSelected() {
         let selectedPlants = this.plants.filter(plant => plant.selected);
@@ -110,6 +135,12 @@ export default {
 .plant.selected {
   border-left: 5px solid green;
   height: 150px;
+}
+
+.plant.enlarged{
+  backgroud: #8bf18b;
+  width: 100%;
+  height: 800px;
 }
 
 .plant h3 {
