@@ -67,9 +67,9 @@ export default {
         rightBranchAngle : Math.PI/7,
         midBranchSize : .6,
         flowerProb : 0.2,
-        flower : "corpseFlower",
+        flower : "sunflower",
         berryProb : 0.2,
-        berry : this.raspberry
+        berry : "raspberry"
       },
       {
         id: 3,
