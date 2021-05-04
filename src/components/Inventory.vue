@@ -3,7 +3,9 @@
     <button @click="breedSelected()" class="btn">
       Breed
     </button>
-    <div :key="plant.id" v-for="plant in plants">
+  </div>
+  <div style="box-sizing: content-box; width: 90%; display: grid; grid-template-columns: repeat(7, 1fr);">
+    <div :key="plant.id" v-for="plant in plants" style="width: 155px; display: grid">
       <div @click="toggleSelection(plant)"
            :class="[plant.selected ? 'selected' : '', 'plant']">
         <h3>
@@ -90,19 +92,21 @@ export default {
 
 <style>
 .fas {
-  color: red;
+  color: #2757a0;
 }
 
 .plant {
-  background: #f4f4f4;
+  /*background: #ffc4c4;*/
+  /*width: 155px;*/
+  /*height: 155px;*/
   margin: 5px;
-  padding: 5px 5px;
+  /*padding: 0px 0px;*/
   cursor: pointer;
-  display: grid;
 }
 
 .plant.selected {
   border-left: 5px solid green;
+  height: 150px;
 }
 
 .plant h3 {

@@ -121,7 +121,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin: 0;
   padding: 0;
 }
@@ -133,12 +133,8 @@ body {
   margin: 30px auto;
   overflow: auto;
   height: 100%;
-  border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 175px 180px 180px;
 }
 .btn {
   display: inline-block;

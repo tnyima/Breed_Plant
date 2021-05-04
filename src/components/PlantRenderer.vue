@@ -4,9 +4,11 @@
 
 <script>
 import p5 from 'p5';
+import Inventory from "./Inventory";
 
 export default{
-    props: {
+  components: {Inventory},
+  props: {
       plant: {},
 
     },
@@ -86,10 +88,5 @@ export default{
 </script>
 
 <style scoped>
-
-.plantContainer{
-  display: grid;
-  grid-template-columns: 150px 150px 150px;
-}
 </style>
 
