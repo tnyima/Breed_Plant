@@ -1,6 +1,6 @@
 <template>
 <footer>
-  <p>Copyright &copy; C.Mitchell,L.Diab,Y.Wu.2021</p>
+  <p>Copyright &copy; C.Mitchell,L.Diab,Y.Wu.T.Nyima.2021</p>
   <router-link to="/about" >About</router-link>
 </footer>
 </template>

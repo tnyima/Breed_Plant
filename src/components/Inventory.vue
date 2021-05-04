@@ -46,6 +46,9 @@ export default {
 
       breedSelected() {
         let selectedPlants = this.plants.filter(plant => plant.selected);
+        if (selectedPlants.length !== 2){
+          alert("Please select two parent plants for breeding")
+        }
         this.plants.unshift({
           ...this.breedPlant(selectedPlants[0], selectedPlants[1]),
           id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1
