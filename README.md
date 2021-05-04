@@ -1,8 +1,18 @@
 # to do
-- make inventory a pop up
-- inventory works...
-  - ten spots for now
-- breed plant button does the thing!
+- enlarged canvas that shows whatever the last selected plant was
+- fix the placement of the images
+- stroke and size stuff
+- make all the image files lower resolution
+- create a few starter plants that utilize all the drawn elements
+- fix the grid to work for different screen sizes
+- small aesthetic stuff 
+- adding music
+- get the popup for discovering stuff working
+- draw more stuff
+
+- if we have sooo much time --> inventory is a popup
+
+
 
 
 
