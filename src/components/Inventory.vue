@@ -4,15 +4,17 @@
 <!--  <div :class="plant.enlarged">-->
 <!--    <PlantRenderer :plant="plant" />-->
 <!--  </div>-->
-  <div class="plant.enlarged" style="display: inline-block;background: #8bf18b; width: 90%; height: 500px;">
-    <PlantRenderer :plant="plant" />
-
-    <!--    <div style="height: 30px">-->
-<!--      <button @click="breedSelected()" class="btn" style="float: right; height: 20px; width: 20px; padding: 0; background: #3e8e41">-->
-<!--&lt;!&ndash;        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikaplant.com%2Fen%2F&psig=AOvVaw1kUgeUQMW6ZnbHW2avABLW&ust=1620239024226000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjWzfDSsPACFQAAAAAdAAAAABAD">&ndash;&gt;-->
-<!--&lt;!&ndash;          <img src="./assets/images/pear.png">&ndash;&gt;-->
-<!--      </button>-->
-<!--    </div>-->
+  <div style="display: inline-block;background: #8bf18b; width: 90%; height: 500px;">
+    <div style="height: 30px">
+      <button @click="breedSelected()" class="btn" style="float: right; height: 20px; width: 20px; padding: 0; background: #3e8e41">
+<!--        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikaplant.com%2Fen%2F&psig=AOvVaw1kUgeUQMW6ZnbHW2avABLW&ust=1620239024226000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjWzfDSsPACFQAAAAAdAAAAABAD">-->
+<!--          <img src="./assets/images/pear.png">-->
+      </button>
+    </div>
+    <div class="plantContainer">
+<!--      <canvas id="defaultCanvas5" class="p5Canvas" width="300" height="300" style="width: 500px; height: 500px; visibility: visible; background: #702bd2"></canvas>-->
+      <PlantRenderer :plant="plants[selectedId]" />
+    </div>
   </div>
   <div>
     <button @click="breedSelected()" class="btn">
