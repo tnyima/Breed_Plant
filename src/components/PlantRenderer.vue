@@ -20,7 +20,7 @@ export default{
               graphics.createCanvas(150, 150);
               graphics.background(174, 217, 165);
 
-              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, this.plant.initialSize, Math.PI * 1.5, 1, 8);
+              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, this.plant.initialSize, Math.PI * 1.5, 1, 5);
             }
           },
           this.$el
@@ -28,21 +28,20 @@ export default{
     },
     methods: {
       drawPlant(g, plant, x, y, size, theta, branchDirection, levels) {
-        if (levels <= 0)  {
+        if (levels <= 0 || x > g.width || y > g.height || x < 0)  {
           return;
         }
-
         let x2 = x + (size * Math.cos(theta));
         let y2 = y + (size * Math.sin(theta));
 
         if (1 <= levels && levels < 2) {
           let image = null;
-          if (Math.random() < plant.flowerProb && plant.flower != null) {
+          if (Math.random() < plant.leafProb && plant.leaf != null) {
+            image = plant.leaf;
+          } else if (Math.random() < plant.flowerProb && plant.flower != null) {
             image = plant.flower;
           } else if (Math.random() < plant.berryProb && plant.berry != null) {
             image = plant.berry;
-          } else if (Math.random() < plant.leafProb && plant.leaf != null) {
-            image = plant.leaf;
           }
           if (image) {
             g.loadImage(require("@/assets/images/" + image + ".png"), pear => {
@@ -54,7 +53,7 @@ export default{
             });
           }
         }
-        g.strokeWeight(Math.pow(plant.strokeSizeSensitivity, levels))
+        g.strokeWeight(Math.pow(plant.strokeWeightSensitivity, levels))
 
         g.line(x, y, x2, y2)
 

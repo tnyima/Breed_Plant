@@ -67,7 +67,9 @@ export default {
           flowerProb: this.randomInRange(plant1.flowerProb, plant2.flowerProb),
           flower: this.randomChoice(plant1.flower, plant2.flower),
           berryProb: this.randomInRange(plant1.berryProb, plant2.berryProb),
-          berry: this.randomChoice(plant1.berry, plant2.berry)
+          berry: this.randomChoice(plant1.berry, plant2.berry),
+          leafProb: this.randomInRange(plant1.leafProb, plant2.leafProb),
+          leaf: this.randomChoice(plant1.leaf, plant2.leaf)
         }
       },
 
