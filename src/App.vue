@@ -50,10 +50,12 @@ export default {
         rightBranchSize : .42,
         rightBranchAngle : Math.PI/9,
         midBranchSize : .8,
-        flowerProb : 0.06,
+        flowerProb : 0.04,
         flower : "sunflower",
         berryProb: 0,
-        berry : null
+        berry : null,
+        leafProb: 0.02,
+        leaf : "leaf"
       },
       {
         id: 2,
@@ -66,10 +68,12 @@ export default {
         rightBranchSize : .65,
         rightBranchAngle : Math.PI/7,
         midBranchSize : .6,
-        flowerProb : 0.2,
+        flowerProb : 0.03,
         flower : "sunflower",
-        berryProb : 0.2,
-        berry : "raspberry"
+        berryProb : 0.02,
+        berry : "raspberry",
+        leafProb: 0.4,
+        leaf : "leaf"
       },
       {
         id: 3,

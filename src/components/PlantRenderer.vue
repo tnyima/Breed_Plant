@@ -35,29 +35,26 @@ export default{
         let x2 = x + (size * Math.cos(theta));
         let y2 = y + (size * Math.sin(theta));
 
-        let centerX = x2 - 30;
-        let centerY = y2 - 30;
-
         if (1 <= levels && levels < 2) {
           let image = null;
           if (Math.random() < plant.flowerProb && plant.flower != null) {
             image = plant.flower;
           } else if (Math.random() < plant.berryProb && plant.berry != null) {
             image = plant.berry;
+          } else if (Math.random() < plant.leafProb && plant.leaf != null) {
+            image = plant.leaf;
           }
-
           if (image) {
             g.loadImage(require("@/assets/images/" + image + ".png"), pear => {
               g.push();
-              g.translate(centerX, centerY);
+              g.translate(x2, y2);
               g.rotate(theta + Math.PI / 2);
-              g.image(pear, 10, 10, 10, 10);
+              g.image(pear, 0, 0, 6, 6);
               g.pop();
             });
           }
         }
         g.strokeWeight(Math.pow(plant.strokeSizeSensitivity, levels))
-        // strokeWeight(levels*.5)
 
         g.line(x, y, x2, y2)
 
@@ -70,13 +67,8 @@ export default{
         return Math.random() < 0.5 ? value1 : value2;
       },
       randomInRange(value1, value2){
-        if (value1 > value2){
-          return Math.random() * (value1 - value2) + value2;
-        }
-        else{
-          return Math.random() * (value2 - value1) + value1;
-        }
-    }
+        return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2)
+      }
 };
 </script>
 
