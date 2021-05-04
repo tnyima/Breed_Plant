@@ -41,7 +41,7 @@ export default {
     this.plants = [
       {
         id: 1,
-        initialSize : 20,
+        initialSize : 0.1,
         strokeWeightSensitivity : 1.2,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
@@ -57,7 +57,7 @@ export default {
       },
       {
         id: 2,
-        initialSize : 20,
+        initialSize : 0.15,
         strokeWeightSensitivity : 1.5,
         leftBranchSize : .42,
         leftBranchAngle : Math.PI/4,
@@ -73,7 +73,7 @@ export default {
       },
       {
         id: 3,
-        initialSize : 30,
+        initialSize : 0.08,
         strokeWeightSensitivity : 1.6,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
@@ -90,7 +90,7 @@ export default {
       },
       {
         id: 4,
-        initialSize: 50,
+        initialSize: 0.2,
         strokeWeightSensitivity : 1.1,
         leftBranchSize: .42,
         leftBranchAngle: Math.PI / 4,
@@ -106,7 +106,7 @@ export default {
       },
       {
         id: 5,
-        initialSize : 42,
+        initialSize : 0.17,
         strokeWeightSensitivity : 1.8,
         leftBranchSize : .41,
         leftBranchAngle : Math.PI/4,

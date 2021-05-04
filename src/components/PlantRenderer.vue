@@ -10,17 +10,16 @@ export default{
   components: {Inventory},
   props: {
       plant: {},
-
     },
     mounted() {
 
       new p5(
           (graphics) => {
             graphics.setup = () => {
-              graphics.createCanvas(150, 150);
+              graphics.createCanvas(180, 180);
               graphics.background(174, 217, 165);
 
-              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, this.plant.initialSize, Math.PI * 1.5, 1, 5);
+              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, graphics.width * this.plant.initialSize, Math.PI * 1.5, 1, 5);
             }
           },
           this.$el
@@ -54,7 +53,6 @@ export default{
           }
         }
         g.strokeWeight(Math.pow(plant.strokeWeightSensitivity, levels))
-
         g.line(x, y, x2, y2)
 
         this.drawPlant(g, plant, x2, y2, size * plant.leftBranchSize, theta + branchDirection * plant.rightBranchAngle, branchDirection, levels - 1);
