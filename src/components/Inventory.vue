@@ -4,35 +4,42 @@
 <!--  <div :class="plant.enlarged">-->
 <!--    <PlantRenderer :plant="plant" />-->
 <!--  </div>-->
-  <div style="display: inline-block;background: #8bf18b; width: 90%; height: 500px;">
-    <div style="height: 30px">
-      <button @click="breedSelected()" class="btn" style="float: right; height: 20px; width: 20px; padding: 0; background: #3e8e41">
+  <div style="display: inline-block;background: #8bf18b; width: 100%; height: 800px;">
+    <div style="height: 30px; alignment: right">
+      <button @click="toggleInventory" style="height: 20px; width: 20px; padding: 0; background: #3e8e41">
+      </button>
+      <div v-if="active">
+        <div style="background: #4CAF50; width: 80%; box-sizing: content-box">
+          <div>
+            <button @click="breedSelected()" class="btn">
+              Breed
+            </button>
+          </div>
+          <div style="box-sizing: content-box; width: 90%; display: grid; grid-template-columns: repeat(8, 1fr);">
+            <div :key="plant.id" v-for="plant in plants" style="width: 155px; display: grid">
+              <div @click="toggleSelection(plant)"
+                   :class="[plant.selected ? 'selected' : '', 'plant']">
+                <h3>
+                  <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
+                </h3>
+                <PlantRenderer :plant="plant" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--      <button @click="breedSelected()" class="btn" style="float: right; height: 20px; width: 20px; padding: 0; background: #3e8e41">-->
 <!--        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikaplant.com%2Fen%2F&psig=AOvVaw1kUgeUQMW6ZnbHW2avABLW&ust=1620239024226000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjWzfDSsPACFQAAAAAdAAAAABAD">-->
 <!--          <img src="./assets/images/pear.png">-->
-      </button>
+<!--      </button>-->
     </div>
-    <div class="plantContainer">
-<!--      <canvas id="defaultCanvas5" class="p5Canvas" width="300" height="300" style="width: 500px; height: 500px; visibility: visible; background: #702bd2"></canvas>-->
-      <PlantRenderer :plant="plants[selectedId]" />
-    </div>
-  </div>
-  <div>
-    <button @click="breedSelected()" class="btn">
-      Breed
-    </button>
-  </div>
-  <div style="box-sizing: content-box; width: 90%; display: grid; grid-template-columns: repeat(7, 1fr);">
-    <div :key="plant.id" v-for="plant in plants" style="width: 155px; display: grid">
-      <div @click="toggleSelection(plant)"
-           :class="[plant.selected ? 'selected' : '', 'plant']">
-        <h3>
-          <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
-        </h3>
-        <PlantRenderer :plant="plant" />
-      </div>
-    </div>
+<!--    <div class="plantContainer">-->
+<!--&lt;!&ndash;      <canvas id="defaultCanvas5" class="p5Canvas" width="300" height="300" style="width: 500px; height: 500px; visibility: visible; background: #702bd2"></canvas>&ndash;&gt;-->
+<!--      <PlantRenderer :plant="plants[selectedId]" />-->
+<!--    </div>-->
   </div>
 </template>
+
 
 <script>
 import PlantRenderer from "./PlantRenderer"
@@ -47,10 +54,14 @@ export default {
     },
     data () {
       return{
-        selectedId : 0
+        // selectedId : 0
+        active: false
       }
     },
     methods: {
+      toggleInventory () {
+        this.active = !this.active
+      },
       toggleSelection(plant) {
         plant.selected = !plant.selected;
         if (plant.selected === true){
@@ -129,7 +140,7 @@ export default {
 
 .plant.selected {
   border-left: 5px solid green;
-  height: 150px;
+  height: 60px;
 }
 
 .plant.enlarged{
