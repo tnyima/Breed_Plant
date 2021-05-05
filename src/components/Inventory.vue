@@ -4,7 +4,8 @@
 <!--  <div :class="plant.enlarged">-->
 <!--    <PlantRenderer :plant="plant" />-->
 <!--  </div>-->
-  <audio autoplay><source src="@/assets/audio/rainforest.mp3"></audio>
+<!--  music: https://www.bensound.com-->
+  <audio autoplay><source src="@/assets/audio/bensound-sweet.mp3"></audio>
   <div style="display: inline-block;background: #8bf18b; width: 100%; height: 600px;">
     <div style="height: 30px; alignment: right">
       <button @click="toggleInventory" style="height: 20px; width: 60px; padding: 0; background: #3e8e41">
