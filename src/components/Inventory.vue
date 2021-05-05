@@ -1,18 +1,19 @@
 <template>
 <!--  music: https://www.bensound.com-->
-  <audio loop autoplay>
-    <source src="@/assets/audio/bensound-sweet.mp3">
+  <audio autoplay>
+    <source src="@/assets/audio/rainforest.mp3">
   </audio>
-  <div style="display: inline-block;background: #8bf18b; width: 100%; height: 600px;">
+  <div style="display: inline-block;background: #8bf18b; width: 100%; height: 1000px;">
     <div style="height: 30px; alignment: right">
       <button @click="toggleInventory" style="height: 20px; width: 60px; padding: 0; background: #3e8e41">
         Inventory
       </button>
+
   <!--      <button class="btn" @click="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"></button>-->
   <!--      <div style="background: #9fffa2; width: 600px; height: 590px">-->
   <!--      </div>-->
       <div v-if="active">
-        <div style="background: #4CAF50; box-sizing: content-box; width: 45%; height: 500px">
+        <div class="contain">
           <div>
             <button @click="breedSelected()" class="btn" style="margin: 10px">
               Breed
@@ -75,10 +76,8 @@ export default {
           }
         }
         if (count > 2){
-          for(const plant of this.plants) {
             plant.selected = false;
           }
-        }
       },
 
       breedSelected() {
@@ -173,5 +172,12 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #9fffa2;
+}
+
+.contain{
+  background: #4CAF50;
+  box-sizing: content-box;
+  width: 45%;
+  height: 500px
 }
 </style>
