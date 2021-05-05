@@ -52,6 +52,10 @@ export default{
             });
           }
         }
+        let red = 120 - (levels*10);
+        let green = red / 2;
+        let blue = 0;
+        g.stroke(red, green, blue)
         g.strokeWeight(g.height * 0.03 * (levels * plant.strokeWeightSensitivity))
         g.line(x, y, x2, y2)
 
