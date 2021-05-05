@@ -15,9 +15,10 @@
       <div v-if="active">
         <div class="contain">
           <div>
-            <button @click="breedSelected()" class="btn" style="margin: 10px">
+            <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn" style="margin: 10px">
               Breed
             </button>
+            <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
           </div>
           <div style="height: 80%; overflow-y: scroll">
             <div style="box-sizing: content-box; width: 85%; height:1%; display: grid; grid-template-columns: repeat(4, 1fr); padding-left: 45px; padding-right: 40px; padding-top: 40px;">
@@ -69,19 +70,14 @@ export default {
           this.selectedId = plant.id;
           console.log(this.selectedId);
         }
-        let count = 0
-        for(const plant of this.plants) {
-          if (plant.selected === true ){
-            count += 1
-          }
-        }
-        if (count > 2){
-            plant.selected = false;
-          }
+      },
+
+      getSelectedPlants() {
+        return this.plants.filter(plant => plant.selected);
       },
 
       breedSelected() {
-        let selectedPlants = this.plants.filter(plant => plant.selected);
+        let selectedPlants = this.getSelectedPlants();
         this.plants.unshift({
           ...this.breedPlant(selectedPlants[0], selectedPlants[1]),
           id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1

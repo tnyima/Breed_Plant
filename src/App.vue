@@ -170,6 +170,10 @@ body {
 .btn:active {
   transform: scale(0.98);
 }
+.btn:disabled{
+  background: #888;
+  color: #444;
+}
 .btn-block {
   display: block;
   width: 100%;
