@@ -1,42 +1,26 @@
 <template>
-<!--  music: https://www.bensound.com-->
   <audio autoplay>
     <source src="@/assets/audio/rainforest.mp3">
   </audio>
-  <div style="display: inline-block;background: #8bf18b; width: 100%; height: 1000px;">
-    <div style="height: 30px; alignment: right">
-      <button @click="toggleInventory" style="height: 20px; width: 60px; padding: 0; background: #3e8e41">
-        Inventory
-      </button>
-
-  <!--      <button class="btn" @click="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"></button>-->
-  <!--      <div style="background: #9fffa2; width: 600px; height: 590px">-->
-  <!--      </div>-->
-      <div v-if="active">
-        <div class="contain">
-          <div>
-            <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn" style="margin: 10px">
-              Breed
-            </button>
-            <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
-          </div>
-          <div style="height: 80%; overflow-y: scroll">
-            <div style="box-sizing: content-box; width: 85%; height:1%; display: grid; grid-template-columns: repeat(4, 1fr); padding-left: 45px; padding-right: 40px; padding-top: 40px;">
-              <div :key="plant.id" v-for="plant in plants" style="width: 130px">
-                <div @click="toggleSelection(plant)"
-                     :class="[plant.selected ? 'selected' : '', 'plant']">
-                  <PlantRenderer :plant="plant" />
-                </div>
-              </div>
+  <div class="inventory-container">
+    <div class="inventory">
+      <div class="controls">
+        <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn" style="margin: 10px">
+          Breed
+        </button>
+        <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
+      </div>
+      <div class="plants">
+        <div style="box-sizing: content-box; width: 85%; height:1%; display: grid; grid-template-columns: repeat(4, 1fr); padding-left: 45px; padding-right: 40px; padding-top: 40px;">
+          <div :key="plant.id" v-for="plant in plants" style="width: 130px">
+            <div @click="toggleSelection(plant)"
+                 :class="[plant.selected ? 'selected' : '', 'plant']">
+              <PlantRenderer :plant="plant" />
             </div>
           </div>
         </div>
       </div>
     </div>
-<!--    <div class="plantContainer">-->
-<!--&lt;!&ndash;      <canvas id="defaultCanvas5" class="p5Canvas" width="300" height="300" style="width: 500px; height: 500px; visibility: visible; background: #702bd2"></canvas>&ndash;&gt;-->
-<!--      <PlantRenderer :plant="plants[selectedId]" />-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -55,15 +39,10 @@ export default {
         PlantRenderer,
     },
     data () {
-      return{
-        // selectedId : 0
-        active: false
+      return {
       }
     },
     methods: {
-      toggleInventory () {
-        this.active = !this.active
-      },
       toggleSelection(plant) {
         plant.selected = !plant.selected;
         if (plant.selected === true){
@@ -121,8 +100,20 @@ export default {
 </script>
 
 <style>
-.fas {
-  color: #2757a0;
+.inventory-container {
+  background: #8bf18b;
+  height: 100%;
+  padding: 20px;
+}
+
+.inventory{
+  background: #4CAF50;
+  height: 100%;
+}
+
+.plants {
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .plant {
@@ -168,12 +159,5 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #9fffa2;
-}
-
-.contain{
-  background: #4CAF50;
-  box-sizing: content-box;
-  width: 45%;
-  height: 500px
 }
 </style>

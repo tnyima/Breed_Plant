@@ -2,12 +2,10 @@
 <!--  <vue-load-image>-->
 <!--    <img src="./assets/images/pear.png">-->
 <!--  </vue-load-image>-->
-  <div class = "container">
-    <Inventory @delete-plant="deletePlant"
-               :plants="plants"/>
-    <router-view :tReturn="tReturn"></router-view>
-    <Footer/>
-  </div>
+  <Inventory @delete-plant="deletePlant"
+             :plants="plants"/>
+  <router-view :tReturn="tReturn"></router-view>
+  <Footer/>
 </template>
 
 <script>
@@ -142,14 +140,10 @@ export default {
 }
 body {
   font-family: 'Poppins', sans-serif;
+  height: 100vh;
 }
-.container {
-  width: 100%;
-  /*margin: 30px auto;*/
-  overflow: auto;
+#app {
   height: 100%;
-  /*padding: 30px;*/
-  /*border-radius: 5px;*/
 }
 .btn {
   display: inline-block;
