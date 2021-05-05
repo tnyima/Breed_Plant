@@ -1,35 +1,28 @@
 <template>
-<!--  <var h = window.innerHeight;></var>-->
-<!--  <var w = window.innerWidth;></var>-->
-<!--  <div :class="plant.enlarged">-->
-<!--    <PlantRenderer :plant="plant" />-->
-<!--  </div>-->
 <!--  music: https://www.bensound.com-->
-  <audio autoplay><source src="@/assets/audio/bensound-sweet.mp3"></audio>
+  <audio loop autoplay>
+    <source src="@/assets/audio/bensound-sweet.mp3">
+  </audio>
   <div style="display: inline-block;background: #8bf18b; width: 100%; height: 600px;">
     <div style="height: 30px; alignment: right">
       <button @click="toggleInventory" style="height: 20px; width: 60px; padding: 0; background: #3e8e41">
         Inventory
       </button>
-<!--      <button class="btn" @click="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"></button>-->
-<!--      <div style="background: #9fffa2; width: 600px; height: 590px">-->
-<!--      </div>-->
+  <!--      <button class="btn" @click="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"></button>-->
+  <!--      <div style="background: #9fffa2; width: 600px; height: 590px">-->
+  <!--      </div>-->
       <div v-if="active">
         <div style="background: #4CAF50; box-sizing: content-box; width: 45%; height: 500px">
           <div>
             <button @click="breedSelected()" class="btn" style="margin: 10px">
               Breed
             </button>
-
           </div>
           <div style="height: 80%; overflow-y: scroll">
             <div style="box-sizing: content-box; width: 95%; display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px;">
               <div :key="plant.id" v-for="plant in plants" style="width: 130px">
                 <div @click="toggleSelection(plant)"
                      :class="[plant.selected ? 'selected' : '', 'plant']">
-                  <h3>
-                    <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
-                  </h3>
                   <PlantRenderer :plant="plant" />
                 </div>
               </div>
@@ -37,10 +30,6 @@
           </div>
         </div>
       </div>
-<!--      <button @click="breedSelected()" class="btn" style="float: right; height: 20px; width: 20px; padding: 0; background: #3e8e41">-->
-<!--        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpikaplant.com%2Fen%2F&psig=AOvVaw1kUgeUQMW6ZnbHW2avABLW&ust=1620239024226000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjWzfDSsPACFQAAAAAdAAAAABAD">-->
-<!--          <img src="./assets/images/pear.png">-->
-<!--      </button>-->
     </div>
 <!--    <div class="plantContainer">-->
 <!--&lt;!&ndash;      <canvas id="defaultCanvas5" class="p5Canvas" width="300" height="300" style="width: 500px; height: 500px; visibility: visible; background: #702bd2"></canvas>&ndash;&gt;-->
