@@ -29,12 +29,12 @@ export default {
 
   methods: {
     //audio code from:https://codepen.io/CSWApps/pen/PJevMN
-    playSound (sound) {
-      if (sound) {
-        let audio = new Audio(sound);
-        audio.play();
-      }
-    },
+    // playSound (sound) {
+    //   if (sound) {
+    //     let audio = new Audio(sound);
+    //     audio.play();
+    //   }
+    // },
     toggleReturn(){
       this.tReturn = !this.tReturn
     },
