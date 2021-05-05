@@ -8,6 +8,9 @@
     <div style="height: 30px; alignment: right">
       <button @click="toggleInventory" style="height: 20px; width: 20px; padding: 0; background: #3e8e41">
       </button>
+<!--      <button class="btn" @click="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"></button>-->
+<!--      <div style="background: #9fffa2; width: 600px; height: 590px">-->
+<!--      </div>-->
       <div v-if="active">
         <div style="background: #4CAF50; box-sizing: content-box; width: 45%; height: 500px">
           <div>
@@ -45,6 +48,7 @@
 
 <script>
 import PlantRenderer from "./PlantRenderer"
+import Button from "../../Rendering-prototype/Vue/Component/Button";
 
 export default {
     name: 'Inventory',
@@ -52,6 +56,7 @@ export default {
         plants: Array
     },
     components: {
+      Button,
         PlantRenderer,
     },
     data () {

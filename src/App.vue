@@ -27,6 +27,13 @@ export default {
     }
   },
   methods: {
+    //audio code from:https://codepen.io/CSWApps/pen/PJevMN
+    playSound (sound) {
+      if (sound) {
+        let audio = new Audio(sound);
+        audio.play();
+      }
+    },
     toggleReturn(){
       this.tReturn = !this.tReturn
     },
@@ -145,7 +152,7 @@ body {
 }
 .btn {
   display: inline-block;
-  background: #000;
+  background: #186519;
   color: #fff;
   border: none;
   padding: 10px 20px;
