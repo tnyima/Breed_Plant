@@ -20,7 +20,7 @@
             </button>
           </div>
           <div style="height: 80%; overflow-y: scroll">
-            <div style="box-sizing: content-box; width: 95%; display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px;">
+            <div style="box-sizing: content-box; width: 85%; height:1%; display: grid; grid-template-columns: repeat(4, 1fr); padding-left: 45px; padding-right: 40px; padding-top: 40px;">
               <div :key="plant.id" v-for="plant in plants" style="width: 130px">
                 <div @click="toggleSelection(plant)"
                      :class="[plant.selected ? 'selected' : '', 'plant']">
