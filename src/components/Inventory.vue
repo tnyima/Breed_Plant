@@ -7,7 +7,8 @@
   <audio autoplay><source src="@/assets/audio/rainforest.mp3"></audio>
   <div style="display: inline-block;background: #8bf18b; width: 100%; height: 600px;">
     <div style="height: 30px; alignment: right">
-      <button @click="toggleInventory" style="height: 20px; width: 20px; padding: 0; background: #3e8e41">
+      <button @click="toggleInventory" style="height: 20px; width: 60px; padding: 0; background: #3e8e41">
+        Inventory
       </button>
       <div v-if="active">
         <div style="background: #4CAF50; box-sizing: content-box; width: 45%; height: 500px">
