@@ -26,6 +26,7 @@ export default {
       tReturn: false
     }
   },
+
   methods: {
     //audio code from:https://codepen.io/CSWApps/pen/PJevMN
     playSound (sound) {

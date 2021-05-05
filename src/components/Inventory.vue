@@ -4,9 +4,11 @@
 <!--  <div :class="plant.enlarged">-->
 <!--    <PlantRenderer :plant="plant" />-->
 <!--  </div>-->
+  <audio autoplay><source src="@/assets/audio/rainforest.mp3"></audio>
   <div style="display: inline-block;background: #8bf18b; width: 100%; height: 600px;">
     <div style="height: 30px; alignment: right">
-      <button @click="toggleInventory" style="height: 20px; width: 20px; padding: 0; background: #3e8e41">
+      <button @click="toggleInventory" style="height: 20px; width: 60px; padding: 0; background: #3e8e41">
+        Inventory
       </button>
 <!--      <button class="btn" @click="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"></button>-->
 <!--      <div style="background: #9fffa2; width: 600px; height: 590px">-->
@@ -17,6 +19,7 @@
             <button @click="breedSelected()" class="btn" style="margin: 10px">
               Breed
             </button>
+
           </div>
           <div style="height: 80%; overflow-y: scroll">
             <div style="box-sizing: content-box; width: 95%; display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px;">
@@ -88,7 +91,6 @@ export default {
         }
       },
 
-
       breedSelected() {
         let selectedPlants = this.plants.filter(plant => plant.selected);
         this.plants.unshift({
@@ -124,8 +126,10 @@ export default {
 
       randomChoice(value1, value2) {
         return Math.random() < 0.5 ? value1 : value2;
-      }
+      },
+
     },
+
 
     emits: ['delete-plant'],
 }
