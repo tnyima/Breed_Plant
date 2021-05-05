@@ -1,7 +1,4 @@
 <template>
-<!--  <vue-load-image>-->
-<!--    <img src="./assets/images/pear.png">-->
-<!--  </vue-load-image>-->
   <Inventory @delete-plant="deletePlant"
              :plants="plants"/>
   <router-view :tReturn="tReturn"></router-view>
@@ -151,7 +148,7 @@ body {
   color: #fff;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;

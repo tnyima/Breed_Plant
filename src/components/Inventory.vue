@@ -2,10 +2,17 @@
   <audio autoplay>
     <source src="@/assets/audio/rainforest.mp3">
   </audio>
+  <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
+    <PlantRenderer :plant="bigPlant" size="400"/>
+  </div>
+
   <div class="inventory-container">
     <div class="inventory">
       <div class="controls">
-        <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn" style="margin: 10px">
+        <button @click="viewSelected()" :disabled="this.getSelectedPlants().length !== 1"  class="btn">
+          View
+        </button>
+        <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn">
           Breed
         </button>
         <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
@@ -14,6 +21,7 @@
         <div style="box-sizing: content-box; width: 85%; height:1%; display: grid; grid-template-columns: repeat(4, 1fr); padding-left: 45px; padding-right: 40px; padding-top: 40px;">
           <div :key="plant.id" v-for="plant in plants" style="width: 130px">
             <div @click="toggleSelection(plant)"
+                 @dblclick="bigPlant = plant"
                  :class="[plant.selected ? 'selected' : '', 'plant']">
               <PlantRenderer :plant="plant" />
             </div>
@@ -40,6 +48,7 @@ export default {
     },
     data () {
       return {
+        bigPlant: null
       }
     },
     methods: {
@@ -53,6 +62,10 @@ export default {
 
       getSelectedPlants() {
         return this.plants.filter(plant => plant.selected);
+      },
+
+      viewSelected() {
+        this.bigPlant = this.getSelectedPlants()[0];
       },
 
       breedSelected() {
@@ -130,10 +143,20 @@ export default {
   height: 120px;
 }
 
-.plant.enlarged{
-  backgroud: #8bf18b;
-  width: 100%;
-  height: 800px;
+.big-plant {
+  background: #4CAF50cc;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-plant canvas {
+  box-shadow: 0 10px 30px #00000055;
 }
 
 .plant h3 {
