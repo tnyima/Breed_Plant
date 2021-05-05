@@ -4,25 +4,27 @@
 <!--  <div :class="plant.enlarged">-->
 <!--    <PlantRenderer :plant="plant" />-->
 <!--  </div>-->
-  <div style="display: inline-block;background: #8bf18b; width: 100%; height: 800px;">
+  <div style="display: inline-block;background: #8bf18b; width: 100%; height: 600px;">
     <div style="height: 30px; alignment: right">
       <button @click="toggleInventory" style="height: 20px; width: 20px; padding: 0; background: #3e8e41">
       </button>
       <div v-if="active">
-        <div style="background: #4CAF50; width: 80%; box-sizing: content-box">
+        <div style="background: #4CAF50; box-sizing: content-box; width: 45%; height: 500px">
           <div>
-            <button @click="breedSelected()" class="btn">
+            <button @click="breedSelected()" class="btn" style="margin: 10px">
               Breed
             </button>
           </div>
-          <div style="box-sizing: content-box; width: 90%; display: grid; grid-template-columns: repeat(8, 1fr);">
-            <div :key="plant.id" v-for="plant in plants" style="width: 155px; display: grid">
-              <div @click="toggleSelection(plant)"
-                   :class="[plant.selected ? 'selected' : '', 'plant']">
-                <h3>
-                  <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
-                </h3>
-                <PlantRenderer :plant="plant" />
+          <div style="height: 80%; overflow-y: scroll">
+            <div style="box-sizing: content-box; width: 95%; display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px;">
+              <div :key="plant.id" v-for="plant in plants" style="width: 130px">
+                <div @click="toggleSelection(plant)"
+                     :class="[plant.selected ? 'selected' : '', 'plant']">
+                  <h3>
+                    <i @click="$emit('delete-plant',plant.id)" class="fas fa-times"></i>
+                  </h3>
+                  <PlantRenderer :plant="plant" />
+                </div>
               </div>
             </div>
           </div>
@@ -140,7 +142,7 @@ export default {
 
 .plant.selected {
   border-left: 5px solid green;
-  height: 60px;
+  height: 120px;
 }
 
 .plant.enlarged{
@@ -153,5 +155,24 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5bbd5b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0e5816;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9fffa2;
 }
 </style>

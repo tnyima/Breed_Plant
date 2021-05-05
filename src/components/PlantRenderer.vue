@@ -16,7 +16,7 @@ export default{
       new p5(
           (graphics) => {
             graphics.setup = () => {
-              graphics.createCanvas(60, 60);
+              graphics.createCanvas(120, 120);
               graphics.background(174, 217, 165);
 
               this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, graphics.width * this.plant.initialSize, Math.PI * 1.5, 1, 5);

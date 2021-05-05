@@ -18,7 +18,7 @@ export default {
   name: 'App',
   components: {
     Inventory,
-    Footer
+    // Footer
   },
   data(){
     return{
