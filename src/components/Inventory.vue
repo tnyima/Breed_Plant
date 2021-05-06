@@ -1,7 +1,7 @@
 <template>
-  <audio loop autoplay>
-    <source src="@/assets/audio/rainforest.mp3">
-  </audio>
+<!--  <audio loop autoplay>-->
+<!--    <source src="@/assets/audio/rainforest.mp3">-->
+<!--  </audio>-->
   <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
     <PlantRenderer :plant="bigPlant" size="400"/>
   </div>
@@ -17,12 +17,11 @@
     </div>
     <div class="plants">
       <div class="inventory-grid">
-        <div :key="plant.id" v-for="plant in plants" style="width: 130px">
-          <div @click="toggleSelection(plant)"
-               @dblclick="bigPlant = plant"
-               :class="[plant.selected ? 'selected' : '', 'plant']">
+        <div :key="plant.id" v-for="plant in plants"
+             @click="toggleSelection(plant)"
+             @dblclick="bigPlant = plant"
+             :class="[plant.selected ? 'selected' : '', 'plant']">
             <PlantRenderer :plant="plant" />
-          </div>
         </div>
       </div>
     </div>
@@ -122,11 +121,6 @@ export default {
 }
 
 .inventory-grid{
-  box-sizing: content-box;
-  width: 85%;
-  height:1%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 205px) 5%;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 50px;
@@ -135,15 +129,15 @@ export default {
 .plant {
   margin: 5px;
   cursor: pointer;
+  display: inline-block;
+  background: rgb(120, 223, 225);
 }
 
 .plant.selected {
-  border-left: 5px solid green;
-  border-right: 5px solid green;
-  border-top: 5px solid green;
-  border-bottom: 5px solid green;
+  outline: 5px solid green;
   height: 190px;
   width: 190px;
+  background: #fffc35;
 }
 
 .big-plant {

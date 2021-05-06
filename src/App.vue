@@ -138,6 +138,7 @@ export default {
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
+  overflow-y: hidden;
 }
 #app {
   height: 100%;

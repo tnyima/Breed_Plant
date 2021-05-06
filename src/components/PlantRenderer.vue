@@ -18,8 +18,6 @@ export default{
           (graphics) => {
             graphics.setup = () => {
               graphics.createCanvas(this.size, this.size);
-              graphics.background(120, 223, 225);
-
               this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, graphics.width * this.plant.initialSize, Math.PI * 1.5, 1, 5);
             }
           },
