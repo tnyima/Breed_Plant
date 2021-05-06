@@ -111,12 +111,12 @@ export default {
 <style>
 
 .inventory{
-  background: #4CAF50;
+  background: #599259;
   height: 100%;
 }
 
 .plants {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100%;
   position: absolute;
   top: 0;
@@ -128,7 +128,7 @@ export default {
   top: 0;
   text-align: center;
   width: 100%;
-  background: #4CAF50dd;
+  background: #599259ee;
   border-bottom: 1px solid #186519;
 }
 
@@ -141,14 +141,14 @@ export default {
   cursor: pointer;
   display: inline-block;
   /*background: rgb(120, 223, 225);*/
-  background-image: linear-gradient(#84cfee, rgb(146, 246, 248));
+  background-image: linear-gradient(#85c3fc, rgb(157, 250, 252));
 }
 
 .plant.selected {
-  outline: 5px solid green;
-  height: 190px;
-  width: 190px;
-  background: #fffc35;
+  outline: 2px solid #fffdc9;
+  /*background-image: linear-gradient(#ce66f5, rgb(217, 146, 248));*/
+  background-image: linear-gradient(#e2abc6, rgb(248, 246, 146));
+
 }
 
 .big-plant {
@@ -175,8 +175,8 @@ export default {
 }
 .btn {
   display: inline-block;
-  background: #186519;
-  color: #fff;
+  background: #552907ee;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   margin: 10px;
@@ -188,26 +188,26 @@ export default {
 }
 
 .btn:disabled{
-  background: #888;
-  color: #444;
+  background: #5bbd5b66;
+  color: #ffffff66;
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #5bbd5b;
+  background: #5bbd5b00;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0e5816;
+  background: #9fffa2;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #9fffa2;
+  background: #552907ee;
 }
 </style>
