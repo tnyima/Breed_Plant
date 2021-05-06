@@ -1,13 +1,9 @@
 <template>
-  <Inventory @delete-plant="deletePlant"
-             :plants="plants"/>
-  <router-view :tReturn="tReturn"></router-view>
-  <Footer/>
+  <Inventory :plants="plants"/>
 </template>
 
 <script>
 import Inventory from './components/Inventory'
-import Footer from "@/components/Footer"
 
 export default {
   name: 'App',
@@ -16,27 +12,7 @@ export default {
   },
   data(){
     return{
-      plants:[],
-      tReturn: false
-    }
-  },
-
-  methods: {
-    //audio code from:https://codepen.io/CSWApps/pen/PJevMN
-    // playSound (sound) {
-    //   if (sound) {
-    //     let audio = new Audio(sound);
-    //     audio.play();
-    //   }
-    // },
-    toggleReturn(){
-      this.tReturn = !this.tReturn
-    },
-    deletePlant(id){
-      if (confirm('Are you sure about deleting this plant?')) {
-        this.plants = this.plants.filter((plant) => 
-        plant.id !== id)
-      } 
+      plants:[]
     }
   },
   created() {
@@ -174,15 +150,4 @@ body {
   height: 100%;
 }
 
-.btn:focus {
-  outline: none;
-}
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
 </style>
