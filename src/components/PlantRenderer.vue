@@ -6,7 +6,7 @@
 import p5 from 'p5';
 import Inventory from "./Inventory";
 
-export default{
+export default {
   components: {Inventory},
   props: {
       plant: {},
@@ -18,7 +18,7 @@ export default{
           (graphics) => {
             graphics.setup = () => {
               graphics.createCanvas(this.size, this.size);
-              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width*.9, graphics.width * this.plant.initialSize, Math.PI * 1.5, 1, 5);
+              this.drawPlant(graphics, this.plant, graphics.height / 2, graphics.width, graphics.width * this.plant.initialSize, Math.PI * 1.5, 1, 5);
             }
           },
           this.$el
@@ -38,8 +38,8 @@ export default{
             image = plant.leaf;
           } else if (Math.random() < plant.flowerProb && plant.flower != null) {
             image = plant.flower;
-          } else if (Math.random() < plant.berryProb && plant.berry != null) {
-            image = plant.berry;
+          } else if (Math.random() < plant.fruitProb && plant.fruit != null) {
+            image = plant.fruit;
           }
           if (image) {
             g.loadImage(require("@/assets/images/" + image + ".png"), pear => {
