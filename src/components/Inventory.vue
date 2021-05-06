@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
-    <PlantRenderer :plant="bigPlant" size="400"/>
+    <PlantRenderer :plant="bigPlant" :size=400 />
   </div>
 </template>
 
@@ -86,8 +86,8 @@ export default {
           midBranchSize: this.randomInRange(plant1.midBranchSize, plant2.midBranchSize),
           flowerProb: this.randomInRange(plant1.flowerProb, plant2.flowerProb),
           flower: this.randomChoice(plant1.flower, plant2.flower),
-          berryProb: this.randomInRange(plant1.berryProb, plant2.berryProb),
-          berry: this.randomChoice(plant1.berry, plant2.berry),
+          fruitProb: this.randomInRange(plant1.fruitProb, plant2.fruitProb),
+          fruit: this.randomChoice(plant1.fruit, plant2.fruit),
           leafProb: this.randomInRange(plant1.leafProb, plant2.leafProb),
           leaf: this.randomChoice(plant1.leaf, plant2.leaf)
         }
@@ -132,6 +132,10 @@ export default {
   border-bottom: 1px solid #186519;
 }
 
+span {
+  color: white;
+}
+
 .inventory-grid{
   padding: 50px;
 }
@@ -142,7 +146,13 @@ export default {
   display: inline-block;
   /*background: rgb(120, 223, 225);*/
   background-image: linear-gradient(#85c3fc, rgb(157, 250, 252));
+  animation: plant 0.3s linear 1;
 }
+
+@keyframes plant{
+  50%  {transform: scale(1.2);}
+}
+
 
 .plant.selected {
   outline: 2px solid #fffdc9;
