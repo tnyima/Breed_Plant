@@ -2,19 +2,7 @@
 <!--  <audio loop autoplay>-->
 <!--    <source src="@/assets/audio/rainforest.mp3">-->
 <!--  </audio>-->
-  <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
-    <PlantRenderer :plant="bigPlant" size="400"/>
-  </div>
   <div class="inventory">
-    <div class="controls">
-      <button @click="viewSelected()" :disabled="this.getSelectedPlants().length !== 1"  class="btn">
-        View
-      </button>
-      <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn">
-        Breed
-      </button>
-      <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
-    </div>
     <div class="plants">
       <div class="inventory-grid">
         <div :key="plant.id" v-for="plant in plants"
@@ -25,6 +13,18 @@
         </div>
       </div>
     </div>
+    <div class="controls">
+      <button @click="viewSelected()" :disabled="this.getSelectedPlants().length !== 1"  class="btn">
+        View
+      </button>
+      <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn">
+        Breed
+      </button>
+      <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
+    </div>
+  </div>
+  <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
+    <PlantRenderer :plant="bigPlant" size="400"/>
   </div>
 </template>
 
@@ -118,19 +118,30 @@ export default {
 .plants {
   overflow-y: scroll;
   height: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 30px;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  background: #4CAF50dd;
+  border-bottom: 1px solid #186519;
 }
 
 .inventory-grid{
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 50px;
+  padding: 50px;
 }
 
 .plant {
   margin: 5px;
   cursor: pointer;
   display: inline-block;
-  background: rgb(120, 223, 225);
+  /*background: rgb(120, 223, 225);*/
+  background-image: linear-gradient(#84cfee, rgb(146, 246, 248));
 }
 
 .plant.selected {
@@ -153,6 +164,7 @@ export default {
 }
 
 .big-plant canvas {
+  background: rgb(120, 223, 225);
   box-shadow: 0 10px 30px #00000055;
 }
 
