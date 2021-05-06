@@ -5,26 +5,23 @@
   <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
     <PlantRenderer :plant="bigPlant" size="400"/>
   </div>
-
-  <div class="inventory-container">
-    <div class="inventory">
-      <div class="controls">
-        <button @click="viewSelected()" :disabled="this.getSelectedPlants().length !== 1"  class="btn">
-          View
-        </button>
-        <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn">
-          Breed
-        </button>
-        <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
-      </div>
-      <div class="plants">
-        <div class="inventory-grid">
-          <div :key="plant.id" v-for="plant in plants" style="width: 130px">
-            <div @click="toggleSelection(plant)"
-                 @dblclick="bigPlant = plant"
-                 :class="[plant.selected ? 'selected' : '', 'plant']">
-              <PlantRenderer :plant="plant" />
-            </div>
+  <div class="inventory">
+    <div class="controls">
+      <button @click="viewSelected()" :disabled="this.getSelectedPlants().length !== 1"  class="btn">
+        View
+      </button>
+      <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn">
+        Breed
+      </button>
+      <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
+    </div>
+    <div class="plants">
+      <div class="inventory-grid">
+        <div :key="plant.id" v-for="plant in plants" style="width: 130px">
+          <div @click="toggleSelection(plant)"
+               @dblclick="bigPlant = plant"
+               :class="[plant.selected ? 'selected' : '', 'plant']">
+            <PlantRenderer :plant="plant" />
           </div>
         </div>
       </div>
@@ -113,11 +110,6 @@ export default {
 </script>
 
 <style>
-.inventory-container {
-  background: #8bf18b;
-  height: 100%;
-  padding: 20px;
-}
 
 .inventory{
   background: #4CAF50;
@@ -134,24 +126,24 @@ export default {
   width: 85%;
   height:1%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding-left: 45px;
-  padding-right: 40px;
-  padding-top: 40px;
+  grid-template-columns: repeat(auto-fill, 205px) 5%;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
 }
 
 .plant {
-  /*background: #ffc4c4;*/
-  /*width: 155px;*/
-  /*height: 155px;*/
   margin: 5px;
-  /*padding: 0px 0px;*/
   cursor: pointer;
 }
 
 .plant.selected {
   border-left: 5px solid green;
-  height: 120px;
+  border-right: 5px solid green;
+  border-top: 5px solid green;
+  border-bottom: 5px solid green;
+  height: 190px;
+  width: 190px;
 }
 
 .big-plant {
@@ -174,6 +166,24 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.btn {
+  display: inline-block;
+  background: #186519;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:disabled{
+  background: #888;
+  color: #444;
 }
 /* width */
 ::-webkit-scrollbar {

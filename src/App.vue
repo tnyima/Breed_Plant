@@ -142,29 +142,14 @@ body {
 #app {
   height: 100%;
 }
-.btn {
-  display: inline-block;
-  background: #186519;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
+
 .btn:focus {
   outline: none;
 }
 .btn:active {
   transform: scale(0.98);
 }
-.btn:disabled{
-  background: #888;
-  color: #444;
-}
+
 .btn-block {
   display: block;
   width: 100%;
