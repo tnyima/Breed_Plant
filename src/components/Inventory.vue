@@ -1,5 +1,5 @@
 <template>
-  <audio autoplay>
+  <audio loop autoplay>
     <source src="@/assets/audio/rainforest.mp3">
   </audio>
   <div class="big-plant" v-if="bigPlant" @click="bigPlant = null">
@@ -18,7 +18,7 @@
         <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
       </div>
       <div class="plants">
-        <div style="box-sizing: content-box; width: 85%; height:1%; display: grid; grid-template-columns: repeat(4, 1fr); padding-left: 45px; padding-right: 40px; padding-top: 40px;">
+        <div class="inventory-grid">
           <div :key="plant.id" v-for="plant in plants" style="width: 130px">
             <div @click="toggleSelection(plant)"
                  @dblclick="bigPlant = plant"
@@ -127,6 +127,17 @@ export default {
 .plants {
   overflow-y: scroll;
   height: 100%;
+}
+
+.inventory-grid{
+  box-sizing: content-box;
+  width: 85%;
+  height:1%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 45px;
+  padding-right: 40px;
+  padding-top: 40px;
 }
 
 .plant {
