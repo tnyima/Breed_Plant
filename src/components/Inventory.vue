@@ -76,9 +76,7 @@ export default {
         ...this.breedPlant(selectedPlants[0], selectedPlants[1]),
         id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1
       });
-      for(const plant of this.getSelectedPlants()) {
-        plant.selected = false;
-      }
+      this.deselectAll();
     },
 
     breedPlant(plant1, plant2) {
