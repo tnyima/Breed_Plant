@@ -3,6 +3,7 @@
 </template>
 
 <script>
+/** Uses p5 to draw plants on the page **/
 import p5 from 'p5';
 import Inventory from "./Inventory";
 
@@ -12,6 +13,7 @@ export default {
     plant: {},
     size: { default: 190 }
   },
+  /** Connects p5 directly to Vue's DOM**/
   mounted() {
     new p5(
       (graphics) => {
@@ -24,6 +26,9 @@ export default {
     );
   },
   methods: {
+    /** Takes in a graphics object, a plant, a starting position, the size of the plant, a starting angle,
+     * a branch direction, and an amount of levels for the base case of the recursion. This is also where
+     * the images are drawn onto the plant. **/
     drawPlant(g, plant, x, y, size, theta, branchDirection, levels) {
       if (levels <= 0 || x > g.width || y > g.height || x < 0)  {
         return;

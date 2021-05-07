@@ -1,8 +1,9 @@
+
 <template>
 <!--  https://soundbible.com/1818-Rainforest-Ambience.html-->
-  <audio loop autoplay>
-    <source src="@/assets/audio/rainforest.mp3">
-  </audio>
+<!--  <audio loop autoplay>-->
+<!--    <source src="@/assets/audio/rainforest.mp3">-->
+<!--  </audio>-->
   <div class="inventory">
     <div class="plants">
       <div class="inventory-grid">
@@ -34,6 +35,8 @@
 </template>
 
 <script>
+/** Handles the back-end breeding and creation of plants as well as displaying them on the screen
+ * updates the inventory as the user interacts with it **/
 import PlantRenderer from "./PlantRenderer"
 import Button from "../../Rendering-prototype/Vue/Component/Button";
 
@@ -44,7 +47,7 @@ export default {
   },
   components: {
     Button,
-      PlantRenderer,
+    PlantRenderer,
   },
   data () {
     return {
@@ -52,24 +55,30 @@ export default {
     }
   },
   methods: {
+    /** For plant selection **/
     toggleSelection(plant) {
       plant.selected = !plant.selected;
     },
 
+    /** A method that returns an array of the selected plants in the inventory **/
     getSelectedPlants() {
       return this.plants.filter(plant => plant.selected);
     },
 
+    /** Sets bigPlant to be the most recently selected plant **/
     viewSelected() {
       this.bigPlant = this.getSelectedPlants()[0];
     },
 
+    /** Deselects all plants in the inventory. Used for the deselect button and by the breeding function **/
     deselectAll() {
       for(const plant of this.getSelectedPlants()) {
         plant.selected = false;
       }
     },
 
+    /** Calls breedPlant on the two selected plants and adds the new plant with its own id
+     * to the beginning of the plants array. Deselects all plants. **/
     breedSelected() {
       let selectedPlants = this.getSelectedPlants();
       this.plants.unshift({
@@ -79,6 +88,7 @@ export default {
       this.deselectAll();
     },
 
+    /** Takes two plants and mixes their parameters, returning a new plant object **/
     breedPlant(plant1, plant2) {
       return {
         initialSize: this.randomInRange(plant1.initialSize, plant2.initialSize),
@@ -97,10 +107,12 @@ export default {
       }
     },
 
+    /** Helper function for getting a random number in a range **/
     randomInRange(value1, value2) {
       return Math.random() * Math.abs(value1 - value2) + Math.min(value1, value2)
     },
 
+    /** Randomly chooses between two options **/
     randomChoice(value1, value2) {
       return Math.random() < 0.5 ? value1 : value2;
     },

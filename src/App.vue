@@ -3,6 +3,7 @@
 </template>
 
 <script>
+/** Sets up the application with a few starter plants **/
 import Inventory from './components/Inventory'
 
 export default {
@@ -15,11 +16,13 @@ export default {
       plants:[]
     }
   },
+
+  /** Starting plants **/
   created() {
     this.plants = [
       {
         id: 1,
-        initialSize : 0.12,
+        initialSize : 0.09,
         strokeWeightSensitivity : 0.1,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/7,
@@ -27,11 +30,11 @@ export default {
         rightBranchAngle : Math.PI/9,
         midBranchSize : .8,
         flowerProb : 0.04,
-        flower : "sunflower",
+        flower : null,
         fruitProb: 0.2,
-        fruit : "apple",
+        fruit : null,
         leafProb: 0.21,
-        leaf : "basicleaf"
+        leaf : null
       },
       {
         id: 2,
@@ -52,7 +55,7 @@ export default {
       {
         id: 3,
         initialSize : 0.24,
-        strokeWeightSensitivity : 0.42,
+        strokeWeightSensitivity : 0.58,
         leftBranchSize : .51,
         leftBranchAngle : Math.PI/9,
         rightBranchSize : .42,
@@ -102,9 +105,9 @@ export default {
         initialSize : 0.17,
         strokeWeightSensitivity : 0.19,
         leftBranchSize : .41,
-        leftBranchAngle : Math.PI/2.5,
+        leftBranchAngle : Math.PI/3.1,
         rightBranchSize : .05,
-        rightBranchAngle : Math.PI/3.1,
+        rightBranchAngle : Math.PI/2.3,
         midBranchSize : .6,
         flowerProb : 0.1,
         flower : "sunflower",
@@ -120,14 +123,14 @@ export default {
         leftBranchSize : .3,
         leftBranchAngle : Math.PI/2.3,
         rightBranchSize : .2,
-        rightBranchAngle : Math.PI/2.2,
+        rightBranchAngle : Math.PI/2.5,
         midBranchSize : .7,
         flowerProb : 0.5,
-        flower : null,
+        flower : "sunflower",
         fruitProb : 0.2,
-        fruit : null,
+        fruit : "apple",
         leafProb: 0.4,
-        leaf : null
+        leaf : "basicleaf"
       }
     ]
   }
@@ -149,5 +152,4 @@ body {
 #app {
   height: 100%;
 }
-
 </style>
