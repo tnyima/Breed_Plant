@@ -15,6 +15,7 @@
       </div>
     </div>
     <div class="controls">
+      <span class="title">Dr. L's Garden</span>
       <button @click="viewSelected()" :disabled="this.getSelectedPlants().length !== 1"  class="btn">
         View
       </button>
@@ -157,6 +158,12 @@ export default {
 .btn:disabled{
   background: #5bbd5b66;
   color: #ffffff66;
+}
+
+.title{
+  position: fixed;
+  left: 10px;
+  font-size: xx-large;
 }
 
 span {
