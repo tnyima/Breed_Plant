@@ -22,6 +22,9 @@
       <button @click="breedSelected()" :disabled="this.getSelectedPlants().length !== 2"  class="btn">
         Breed
       </button>
+      <button @click="deselectAll()" :disabled="this.getSelectedPlants().length < 3" class="btn" >
+        Deselect All
+      </button>
       <span v-if="this.getSelectedPlants().length > 2">Select only two plants to breed</span>
     </div>
   </div>
@@ -61,13 +64,19 @@ export default {
       this.bigPlant = this.getSelectedPlants()[0];
     },
 
+    deselectAll() {
+      for(const plant of this.getSelectedPlants()) {
+        plant.selected = false;
+      }
+    },
+
     breedSelected() {
       let selectedPlants = this.getSelectedPlants();
       this.plants.unshift({
         ...this.breedPlant(selectedPlants[0], selectedPlants[1]),
         id: Math.max(...this.plants.map(p => p.id)) + 1  // new plant ID = largest existing ID + 1
       });
-      for(const plant of this.plants) {
+      for(const plant of this.getSelectedPlants()) {
         plant.selected = false;
       }
     },
