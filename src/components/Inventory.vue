@@ -51,10 +51,6 @@ export default {
   methods: {
     toggleSelection(plant) {
       plant.selected = !plant.selected;
-      if (plant.selected === true){
-        this.selectedId = plant.id;
-        console.log(this.selectedId);
-      }
     },
 
     getSelectedPlants() {
@@ -164,6 +160,8 @@ export default {
   position: fixed;
   left: 10px;
   font-size: xx-large;
+  padding-top: 8px;
+  padding-left: 5px;
 }
 
 span {
