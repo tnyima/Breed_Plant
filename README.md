@@ -1,11 +1,8 @@
 
-# Dr'L's Garden
+# Dr. L's Garden
 
 In this game, the user is encouraged to enjoy nature and to be present in the moment through the pleasure of breeding beautiful plants.
 
-## FAQ
-#### Q: How do I run this?
-#### A: Type 'npm run serve' in the terminal/command line 
 This project relies on p5.js and Vue 3. 
 ## Install node.js
 ```
@@ -44,3 +41,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - no home page!
 - turn audio on and off
 
+### Notes
+- if you want to add new images, make sure they have a transparent background and add it to the images folder. The dimensions of the images used is 400 x 400 pixels. 
+- to follow the general convention for Vue projects, be sure to keep the App.vue file outside the components folder as it is placed in this repository.
