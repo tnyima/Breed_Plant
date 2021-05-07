@@ -4,11 +4,14 @@ function preload() {
     raspberry = loadImage("raspberry.png");
     corpseFlower = loadImage("flower-transparent1.png");
     basicLeaf = loadImage("leaf.png");
-    pear = loadImage("pear.png");
+    banana = loadImage("banana.png");
     blueberry = loadImage("blueberry.png");
     strawberry = loadImage("strawberry.png");
-    strawberry1 = loadImage("strawberry1.png");
     orange = loadImage("orange.png");
+    cherryblossom = loadImage("cherryblossom.png");
+    apple = loadImage("apple.png");
+    fallleaf = loadImage("fallleaf.png");
+    trileaf = loadImage("trileaf.png");
 
 }
 function setup() {

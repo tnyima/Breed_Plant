@@ -77,7 +77,7 @@ export default {
         flowerProb: 0.2,
         flower: "cherryblossom",
         fruitProb: 0.2,
-        fruit: "pear",
+        fruit: "banana",
         leafProb: 0.3,
         leaf : "basicleaf"
       },
