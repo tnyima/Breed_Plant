@@ -4,11 +4,12 @@
 In this game, the user is encouraged to enjoy nature and to be present in the moment through the pleasure of breeding beautiful plants.
 
 This project relies on p5.js and Vue 3. 
-## Install node.js
+## Install Node.js
+To check which version of Node.js you have, run the following command in the terminal:
 ```
 npm -v
 ```
-Make sure you install node version.7.
+Make sure you install node version 7.
 ## Project setup
 ```
 npm install

@@ -1,9 +1,9 @@
 
 <template>
 <!--  https://soundbible.com/1818-Rainforest-Ambience.html-->
-<!--  <audio loop autoplay>-->
-<!--    <source src="@/assets/audio/rainforest.mp3">-->
-<!--  </audio>-->
+  <audio loop autoplay>
+    <source src="@/assets/audio/rainforest.mp3">
+  </audio>
   <div class="inventory">
     <div class="plants">
       <div class="inventory-grid">
